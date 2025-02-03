@@ -1,0 +1,27 @@
+{
+    "$schema": "https://app.blockstudio.dev/schema",
+    "apiVersion": 2,
+    "name": "wp2/item-subtitle",
+    "title": "Subtitle",
+    "category": "wp2-item",
+    "icon": "editor-paragraph",
+    "description": "Display the subtitle of the queried item.",
+    "supports": {
+        "align": [
+            "left",
+            "center",
+            "right",
+            "full",
+            "wide"
+        ],
+        "typography": {
+            "fontSize": true,
+            "lineHeight": true,
+            "textAlign": true,
+            "__experimentalFontFamily": true,
+            "__experimentalFontWeight": true,
+            "__experimentalLetterSpacing": true
+        }
+    },
+    "blockstudio": true
+}

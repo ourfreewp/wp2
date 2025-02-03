@@ -1,0 +1,25 @@
+{
+   "$schema": "https://app.blockstudio.dev/schema",
+   "apiVersion": 2,
+   "name": "wp2/item-dateline",
+   "title": "Dateline",
+   "category": "wp2-item",
+   "icon": "clock",
+   "description": "Displays the date and time of the item.",
+   "supports": {
+       "ariaLabel": true,
+       "color": {
+           "background": true,
+           "text": true
+       },
+       "align": [
+           "left",
+           "center",
+           "right",
+           "full",
+           "wide"
+       ],
+       "customClassName": true
+   },
+   "blockstudio": true
+}

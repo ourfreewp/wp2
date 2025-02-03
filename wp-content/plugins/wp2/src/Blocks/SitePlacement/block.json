@@ -1,0 +1,62 @@
+{
+    "$schema": "https://app.blockstudio.dev/schema",
+    "apiVersion": 2,
+    "name": "wp2/site-placement",
+    "title": "Placement",
+    "category": "wp2-site",
+    "icon": "megaphone",
+    "description": "Display a single placement",
+    "supports": {
+        "align": [
+            "wide",
+            "full"
+        ],
+        "ariaLabel": true,
+        "color": {
+            "background": true
+        },
+        "background": {
+            "backgroundImage": true,
+            "backgroundSize": true
+        },
+        "dimensions": {
+            "minHeight": true,
+            "aspectRatio": true
+        },
+        "customClassName": true,
+        "className": false,
+        "spacing": {
+            "padding": true,
+            "margin": true
+        }
+    },
+    "blockstudio": {
+        "attributes": [
+            {
+                "id": "option",
+                "type": "select",
+                "label": "Option",
+                "allowNull": "Select Option",
+                "options": [
+                    {
+                        "label": "Default",
+                        "value": "0",
+                        "innerBlocks": [
+                            {
+                                "name": "core/group",
+                                "innerBlocks": [
+                                    {
+                                        "name": "core/paragraph",
+                                        "attributes": {
+                                            "content": "This is a single placement block."
+                                        }
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}

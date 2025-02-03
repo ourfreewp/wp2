@@ -1,0 +1,136 @@
+{
+    "$schema": "https://app.blockstudio.dev/schema/extend",
+    "name": "core/template-part",
+    "priority": 10,
+    "blockstudio": {
+        "extend": true,
+        "attributes": [
+            {
+                "id": "template",
+                "type": "select",
+                "label": "Template",
+                "allowNull": "Select Template",
+                "options": [
+                    {
+                        "label": "Index",
+                        "value": "index"
+                    },
+                    {
+                        "label": "404",
+                        "value": "404"
+                    },
+                    {
+                        "label": "Archive",
+                        "value": "archive"
+                    },
+                    {
+                        "label": "Author",
+                        "value": "author"
+                    },
+                    {
+                        "label": "Front Page",
+                        "value": "front-page"
+                    },
+                    {
+                        "label": "Page",
+                        "value": "page"
+                    },
+                    {
+                        "label": "Search",
+                        "value": "search"
+                    },
+                    {
+                        "label": "Single",
+                        "value": "single"
+                    }
+                ],
+                "set": [
+                    {
+                        "attribute": "data-wp2-template",
+                        "value": "{attributes.template}"
+                    }
+                ]
+            },
+            {
+                "id": "template_zone",
+                "type": "select",
+                "label": "Zone",
+                "allowNull": "Select Zone",
+                "options": [
+                    {
+                        "label": "Root",
+                        "value": "root"
+                    },
+                    {
+                        "label": "Header",
+                        "value": "header"
+                    },
+                    {
+                        "label": "Main",
+                        "value": "main"
+                    },
+                    {
+                        "label": "Content",
+                        "value": "content"
+                    },
+                    {
+                        "label": "Query",
+                        "value": "query"
+                    },
+                    {
+                        "label": "Article",
+                        "value": "article"
+                    },
+                    {
+                        "label": "Primary",
+                        "value": "primary"
+                    },
+                    {
+                        "label": "Secondary",
+                        "value": "secondary"
+                    },
+                    {
+                        "label": "Footer",
+                        "value": "footer"
+                    }
+                ],
+                "set": [
+                    {
+                        "attribute": "data-wp2-template-zone",
+                        "value": "{attributes.template_zone}"
+                    }
+                ]
+            },
+            {
+                "id": "template_area",
+                "type": "select",
+                "label": "Area",
+                "allowNull": "Select Area",
+                "options": [
+                    {
+                        "label": "Header",
+                        "value": "header"
+                    },
+                    {
+                        "label": "Content",
+                        "value": "content"
+                    },
+                    {
+                        "label": "Aside",
+                        "value": "aside"
+                    },
+                    {
+                        "label": "Footer",
+                        "value": "footer"
+                    }
+                ],
+                "set": [
+                    {
+                        "attribute": "data-wp2-template-area",
+                        "value": "{attributes.template_area}"
+                    }
+                ]
+            }
+        ]
+    }
+}

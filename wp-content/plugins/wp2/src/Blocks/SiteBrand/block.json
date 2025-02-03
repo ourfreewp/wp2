@@ -1,0 +1,80 @@
+{
+    "$schema": "https://app.blockstudio.dev/schema",
+    "name": "wp2/site-brand",
+    "title": "Site Brand",
+    "category": "wp2-site",
+    "icon": "id-alt",
+    "description": "Display the site brand.",
+    "supports": {
+        "className": false,
+        "customClassName": true
+    },
+    "blockstudio": {
+        "attributes": [
+            {
+                "id": "identity",
+                "type": "select",
+                "label": "Identity",
+                "default": "site",
+                "fallback": "site",
+                "options": [
+                    {
+                        "value": "site",
+                        "label": "Site"
+                    }
+                ]
+            },
+            {
+                "id": "kind",
+                "type": "select",
+                "label": "Kind",
+                "default": "logo",
+                "fallback": "logo",
+                "options": [
+                    {
+                        "value": "logo",
+                        "label": "Logo"
+                    },
+                    {
+                        "value": "short-logo",
+                        "label": "Short Logo"
+                    },
+                    {
+                        "value": "icon",
+                        "label": "Icon"
+                    }
+                ]
+            },
+            {
+                "id": "theme",
+                "type": "select",
+                "label": "Theme",
+                "default": "light",
+                "fallback": "light",
+                "options": [
+                    {
+                        "value": "light",
+                        "label": "Light"
+                    },
+                    {
+                        "value": "dark",
+                        "label": "Dark"
+                    }
+                ]
+            },
+            {
+                "id": "type",
+                "type": "select",
+                "label": "Type",
+                "default": "svg",
+                "fallback": "svg",
+                "options": [
+                    {
+                        "value": "svg",
+                        "label": "SVG"
+                    }
+                ]
+            }
+        ]
+    }
+}

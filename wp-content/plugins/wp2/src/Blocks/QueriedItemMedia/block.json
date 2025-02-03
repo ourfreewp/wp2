@@ -1,0 +1,10 @@
+{
+   "$schema": "https://app.blockstudio.dev/schema",
+   "apiVersion": 2,
+   "name": "wp2/item-media",
+   "title": "Media",
+   "category": "wp2-item",
+   "icon": "admin-media",
+   "description": "Display media for a queried item",
+   "blockstudio": true
+}

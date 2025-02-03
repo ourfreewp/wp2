@@ -1,0 +1,42 @@
+{
+   "$schema": "https://app.blockstudio.dev/schema",
+   "apiVersion": 2,
+   "name": "wp2/article-footer",
+   "title": "Footer",
+   "category": "wp2-article",
+   "icon": "table-row-before",
+   "description": "Display the article footer",
+   "allowedBlocks": [
+       "core/group",
+       "core/paragraph"
+   ],
+   "blockstudio": {
+       "attributes": [
+           {
+               "id": "option",
+               "type": "select",
+               "label": "Option",
+               "allowNull": "Select Option",
+               "options": [
+                   {
+                       "label": "Default",
+                       "value": "0",
+                       "innerBlocks": [
+                           {
+                               "name": "core/group",
+                               "innerBlocks": [
+                                   {
+                                       "name": "core/paragraph",
+                                       "attributes": {
+                                           "content": "This is the default footer"
+                                       }
+                                   }
+                               ]
+                           }
+                       ]
+                   }
+               ]
+           }
+       ]
+   }
+}

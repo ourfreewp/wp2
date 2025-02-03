@@ -1,0 +1,67 @@
+{
+    "$schema": "https://app.blockstudio.dev/schema",
+    "apiVersion": 2,
+    "name": "wp2/navbar-secondary",
+    "title": "Secondary Navbar",
+    "category": "wp2-navigation",
+    "icon": "ellipsis",
+    "ancestor": [
+        "wp2/site-header"
+    ],
+    "usesContext": [
+        "wp2/site-header"
+    ],
+    "description": "Secondary navigation bar",
+    "supports": {
+        "align": [
+            "wide",
+            "full"
+        ],
+        "ariaLabel": true,
+        "color": {
+            "background": true
+        },
+        "background": {
+            "backgroundImage": true,
+            "backgroundSize": true
+        },
+        "dimensions": {
+            "minHeight": true,
+            "aspectRatio": false
+        },
+        "className": false,
+        "customClassName": true,
+        "spacing": {
+            "padding": true,
+            "margin": true,
+			"__experimentalDefaultControls": {
+				"margin": false,
+				"padding": false
+			}
+        },
+        "__experimentalBorder": {
+            "color": true,
+            "radius": true,
+            "style": true,
+            "width": true
+        }
+    },
+    "allowedBlocks": [
+        "core/group"
+    ],
+    "attributes": {
+        "align": {
+            "type": "string",
+            "default": "wide"
+        },
+        "layout": {
+            "type": "object",
+            "default": {
+                "type": "flex",
+                "flexWrap": "nowrap",
+                "justifyContent": "space-between"
+            }
+        }
+    },
+    "blockstudio": true
+}
