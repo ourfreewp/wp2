@@ -1,0 +1,58 @@
+{
+    "$schema": "https://app.blockstudio.dev/schema",
+    "apiVersion": 2,
+    "name": "wp2/navbar-primary",
+    "title": "Primary Navbar",
+    "category": "wp2-navigation",
+    "icon": "screenoptions",
+    "description": "Primary navigation bar",
+    "ancestor": [
+        "wp2/site-header"
+    ],
+    "usesContext": [
+        "wp2/site-header"
+    ],
+    "supports": {
+        "align": [
+            "wide",
+            "full"
+        ],
+        "layout": true,
+        "ariaLabel": true,
+        "color": {
+            "background": true
+        },
+        "background": {
+            "backgroundImage": true,
+            "backgroundSize": true
+        },
+        "dimensions": {
+            "minHeight": true,
+            "aspectRatio": false
+        },
+        "className": false,
+        "customClassName": true,
+        "spacing": {
+            "padding": true,
+            "margin": true
+        }
+    },
+    "allowedBlocks": [
+        "core/group"
+    ],
+    "attributes": {
+        "align": {
+            "type": "string",
+            "default": "wide"
+        },
+        "layout": {
+            "type": "object",
+            "default": {
+                "type": "flex",
+                "flexWrap": "nowrap",
+                "justifyContent": "space-between"
+            }
+        }
+    },
+    "blockstudio": true
+}

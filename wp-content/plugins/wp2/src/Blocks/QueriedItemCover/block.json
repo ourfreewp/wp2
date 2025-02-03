@@ -1,0 +1,10 @@
+{
+   "$schema": "https://app.blockstudio.dev/schema",
+   "apiVersion": 2,
+   "name": "wp2/item-cover",
+   "title": "Cover",
+   "category": "wp2-item",
+   "icon": "cover-image",
+   "description": "Display the cover image of the queried item.",
+   "blockstudio": true
+}

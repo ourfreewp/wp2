@@ -1,0 +1,44 @@
+{
+    "$schema": "https://app.blockstudio.dev/schema",
+    "apiVersion": 2,
+    "name": "wp2/broadcast-content",
+    "title": "Content",
+    "category": "wp2-broadcast",
+    "icon": "megaphone",
+    "description": "Display a broadcast content block.",
+    "allowedBlocks": [
+        "wp2/single-placement"
+    ],
+    "blockstudio": {
+        "attributes": [
+            {
+                "id": "option",
+                "type": "select",
+                "label": "Option",
+                "default": "1",
+                "fallback": "1",
+                "allowNull": "Select Option",
+                "options": [
+                    {
+                        "label": "House",
+                        "value": "0",
+                        "innerBlocks": [
+                            {
+                                "name": "wp2/single-placement"
+                            }
+                        ]
+                    },
+                    {
+                        "label": "Google Ad Manager",
+                        "value": "1",
+                        "innerBlocks": [
+                            {
+                                "name": "wp2/single-placement"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}

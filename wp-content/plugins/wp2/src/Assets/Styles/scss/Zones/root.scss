@@ -1,0 +1,20 @@
+.wp-site-blocks {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    min-height: 100vh;
+
+    >  .wp-block-template-part {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        margin-top:0;
+        margin-bottom:0;
+
+        &:last-child {
+            margin-top: auto;
+            margin-bottom: 0;
+        }
+    }
+}

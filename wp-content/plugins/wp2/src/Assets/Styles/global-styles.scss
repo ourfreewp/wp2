@@ -1,0 +1,83 @@
+@import "../../vendor/twbs/bootstrap/scss/functions";
+@import "../../vendor/twbs/bootstrap/scss/variables";
+@import "../../vendor/twbs/bootstrap/scss/maps";
+
+$enable-caret: false;
+$enable-rounded: false;
+$enable-grid-classes: false;
+$enable-container-classes: true;
+$enable-cssgrid: true;
+$enable-rfs: false;
+$enable-validation-icons: false;
+
+$enable-dark-mode: false;
+
+$prefix: wp--custom--;
+
+$spacers: (
+    "0": 0
+);
+
+$position-values: (
+    0: 0,
+    50: 50%,
+    100: 100%
+);
+
+$grid-breakpoints: (
+    xs: 0,
+    // Extra small devices (phones)
+    sm: 360px,
+    // Small devices (smaller landscape phones, reduced from 576px)
+    md: 576px,
+    // Medium devices (small tablets, reduced from 768px)
+    lg: 768px,
+    // Large devices (tablets and smaller laptops, reduced from 992px)
+    xl: 992px,
+    // Extra large devices (standard desktops, reduced from 1200px)
+    xxl: 1140px
+    // Ultra large devices (large desktops, reduced from 1440px)
+);
+
+$grid-columns: 12;
+$grid-gutter-width: 1.5rem;
+$grid-row-columns: 6;
+
+$zindex-levels: (
+    n1: -1,
+    // Negative z-index for backgrounds
+    0: 0,
+    // Base level
+    1: 1,
+    // Stretched link
+    2: 2,
+    // Additional base levels
+    3: 3,
+    dropdown: 1000,
+    // Dropdowns
+    sticky: 1020,
+    // Sticky elements
+    fixed: 1030,
+    // Fixed elements
+    modal-backdrop: 1040,
+    // Modal and offcanvas backdrops
+    offcanvas-backdrop: 1040,
+    offcanvas: 1050,
+    // Offcanvas elements
+    modal: 1060,
+    // Modals
+    popover: 1070,
+    // Popovers
+    tooltip: 1080,
+    // Tooltips
+    wpadminbar: 99999 // WordPress admin bar
+);
+
+@import "../../vendor/twbs/bootstrap/scss/mixin";
+@import "../../vendor/twbs/bootstrap/scss/utilities";
+@import "../../vendor/twbs/bootstrap/scss/grid";
+@import "../../vendor/twbs/bootstrap/scss/transitions";
+@import "../../vendor/twbs/bootstrap/scss/helpers";
+@import "../../vendor/twbs/bootstrap/scss/utilities/api";
+
+

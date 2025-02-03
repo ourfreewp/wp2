@@ -1,0 +1,17 @@
+# Ignoreexact file
+**/wp-config.php
+
+# Ignore the entire directory
+**/_dist/
+**/node_modules/
+
+# Composer
+**/vendor/
+**/composer.lock
+
+# InstaWP Related
+.vscode/sftp.json
+.htaccess
+license.txt
+readme.html
+robots.txt

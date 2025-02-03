@@ -1,0 +1,10 @@
+{
+   "$schema": "https://app.blockstudio.dev/schema",
+   "apiVersion": 2,
+   "name": "wp2/item-photo",
+   "title": "Photo",
+   "category": "wp2-item",
+   "icon": "camera",
+   "description": "Display a photo for a queried item",
+   "blockstudio": true
+}

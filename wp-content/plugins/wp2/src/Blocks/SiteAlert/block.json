@@ -1,0 +1,39 @@
+{
+    "$schema": "https://app.blockstudio.dev/schema",
+    "apiVersion": 2,
+    "name": "wp2/site-alert",
+    "title": "Site Alert",
+    "category": "wp2-site",
+    "icon": "admin-menu",
+    "description": "Display a site alert.",
+    "supports": {
+		"__experimentalSettings": true,
+        "align": [
+            "wide",
+            "full"
+        ],
+        "ariaLabel": true,
+        "color": {
+            "background": true
+        },
+        "background": {
+            "backgroundImage": true,
+            "backgroundSize": true
+        },
+        "dimensions": {
+            "minHeight": true,
+            "aspectRatio": true
+        },
+        "className": false,
+        "customClassName": true,
+        "spacing": {
+            "padding": true,
+            "margin": true
+        }
+    },
+    "allowedBlocks": [
+        "core/group",
+        "core/paragraph"
+    ],
+    "blockstudio": true
+}

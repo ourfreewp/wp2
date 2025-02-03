@@ -1,0 +1,91 @@
+{
+    "$schema": "https://app.blockstudio.dev/schema",
+    "apiVersion": 2,
+    "name": "wp2/query-content",
+    "title": "Content",
+    "category": "wp2-query",
+    "icon": "excerpt-view",
+    "description": "Display the query content",
+    "allowedBlocks": [
+        "core/group",
+        "core/query",
+        "core/post-template",
+        "core/query-pagination",
+        "core/query-pagination-previous",
+        "core/query-pagination-numbers",
+        "core/query-pagination-next",
+        "core/query-no-results",
+        "wp2/site-item"
+    ],
+    "blockstudio": {
+        "attributes": [
+            {
+                "id": "option",
+                "type": "select",
+                "label": "Option",
+                "allowNull": "Select Option",
+                "options": [
+                    {
+                        "label": "Default",
+                        "value": "0",
+                        "innerBlocks": [
+                            {
+                                "name": "core/group",
+                                "innerBlocks": [
+                                    {
+                                        "name": "core/query",
+                                        "innerBlocks": [
+                                            {
+                                                "name": "core/post-template",
+                                                "innerBlocks": [
+                                                    {
+                                                        "name": "core/group",
+                                                        "innerBlocks": [
+                                                            {
+                                                                "name": "wp2/site-item"
+                                                            }
+                                                        ]
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "name": "core/query-pagination",
+                                                "innerBlocks": [
+                                                    {
+                                                        "name": "core/query-pagination-previous"
+                                                    },
+                                                    {
+                                                        "name": "core/query-pagination-numbers"
+                                                    },
+                                                    {
+                                                        "name": "core/query-pagination-next"
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "name": "core/query-no-results",
+                                                "innerBlocks": [
+                                                    {
+                                                        "name": "core/group",
+                                                        "innerBlocks": [
+                                                            {
+                                                                "name": "core/paragraph",
+                                                                "attributes": {
+                                                                    "content": "No items found."
+                                                                }
+                                                            }
+                                                        ]
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}

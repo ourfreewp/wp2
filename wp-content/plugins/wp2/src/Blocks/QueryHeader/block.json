@@ -1,0 +1,44 @@
+{
+    "$schema": "https://app.blockstudio.dev/schema",
+    "apiVersion": 2,
+    "name": "wp2/query-header",
+    "title": "Header",
+    "category": "wp2-query",
+    "icon": "table-row-before",
+    "description": "Display the query footer",
+    "allowedBlocks": [
+        "core/group",
+        "wp2/single-section"
+    ],
+    "blockstudio": {
+        "attributes": [
+            {
+                "id": "variant",
+                "type": "select",
+                "label": "Variant",
+                "default": "1",
+                "fallback": "1",
+                "allowNull": "Select a variant",
+                "options": [
+                    {
+                        "label": "One",
+                        "value": "1",
+                        "innerBlocks": [
+                            {
+                                "name": "core/group",
+                                "innerBlocks": [
+                                    {
+                                        "name": "wp2/query-name"
+                                    },
+                                    {
+                                        "name": "wp2/query-description"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}

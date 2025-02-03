@@ -1,0 +1,22 @@
+.wp2-site-footer {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    min-height: 600px;
+
+    >.wp-block-group {
+        padding-top: var(--wp2--site-footer--padding-top, var(--wp--preset--spacing--70));
+        padding-bottom: var(--wp2--site-footer--padding-bottom, var(--wp--preset--spacing--70));
+    }
+}
+
+
+.wp-site-blocks {
+    >.wp-block-template-part:last-child {
+        background-color: var(--wp2--site-footer--background-color, var(--wp--preset--color--dark));
+        background-image: var(--wp2--site-footer--background-image, none);
+        background-size: cover;
+    }
+}

@@ -1,0 +1,10 @@
+{
+   "$schema": "https://app.blockstudio.dev/schema",
+   "apiVersion": 2,
+   "name": "wp2/item-term",
+   "title": "Term",
+   "category": "wp2-item",
+   "icon": "category",
+   "description": "Display the term for a queried item",
+   "blockstudio": true
+}

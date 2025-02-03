@@ -1,0 +1,10 @@
+{
+   "$schema": "https://app.blockstudio.dev/schema",
+   "apiVersion": 2,
+   "name": "wp2/item-byline",
+   "title": "Byline",
+   "category": "wp2-item",
+   "icon": "nametag",
+   "description": "Display the byline of the queried item.",
+   "blockstudio": true
+}
