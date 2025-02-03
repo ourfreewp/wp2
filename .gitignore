@@ -10,7 +10,6 @@
 **/composer.lock
 
 # InstaWP Related
-.vscode/sftp.json
 .htaccess
 license.txt
 readme.html
