@@ -1,0 +1,1100 @@
+{
+    "$schema": "https://app.blockstudio.dev/schema",
+    "apiVersion": 2,
+    "name": "wp2/root",
+    "title": "Root",
+    "category": "wp2-root",
+    "icon": "table-row-after",
+    "description": "Display the site root.",
+    "supports": {
+        "className": false,
+        "customClassName": false,
+        "renaming": true,
+        "reusable": false,
+        "multiple": false,
+        "lock": true,
+        "html": false,
+        "inserter": true
+    },
+    "attributes": {
+        "className": {
+            "type": "string",
+            "default": "wp2-root wp2-root--index"
+        },
+        "metadata": {
+            "type": "object",
+            "default": {
+                "name": "Index: Root"
+            }
+        },
+        "templateLock": {
+            "type": "string",
+            "default": "all"
+        },
+        "lock": {
+            "type": "object",
+            "default": {
+                "move": true,
+                "remove": true
+            }
+        },
+        "layout": {
+            "type": "object",
+            "default": {
+                "type": "flex",
+                "alignItems": "stretch",
+                "flexWrap": "nowrap",
+                "justifyContent": "stretch",
+                "verticalAlignment": "space-between",
+                "orientation": "vertical",
+                "flexDirection": "column"
+            }
+        },
+        "style": {
+            "type": "object",
+            "default": {
+                "dimensions": {
+                    "minHeight": "100vh"
+                },
+                "spacing": {
+                    "padding": {
+                        "top": "0",
+                        "right": "0",
+                        "bottom": "0",
+                        "left": "0"
+                    },
+                    "margin": {
+                        "top": "0",
+                        "right": "0",
+                        "bottom": "0",
+                        "left": "0"
+                    },
+                    "blockGap": "0"
+                }
+            }
+        }
+    },
+    "allowedBlocks": [
+        "core/template-part"
+    ],
+    "blockstudio": {
+        "attributes": [
+            {
+                "id": "option",
+                "type": "select",
+                "label": "Option",
+                "allowNull": "Select Option",
+                "options": [
+                    {
+                        "label": "404 — Default",
+                        "value": "404-0",
+                        "innerBlocks": [
+                            {
+                                "name": "core/template-part",
+                                "attributes": {
+                                    "slug": "root-header-part-404",
+                                    "templateLock": "contentOnly",
+                                    "lock": {
+                                        "move": true,
+                                        "remove": true
+                                    },
+                                    "className": "wp2-root-header",
+                                    "blockstudio": {
+                                        "data": {
+                                            "template": {
+                                                "value": "404",
+                                                "label": "404"
+                                            },
+                                            "template_zone": {
+                                                "value": "root",
+                                                "label": "Root"
+                                            },
+                                            "template_area": {
+                                                "value": "header",
+                                                "label": "Header"
+                                            }
+                                        }
+                                    },
+                                    "template": {
+                                        "value": "404",
+                                        "label": "404"
+                                    },
+                                    "template_zone": {
+                                        "value": "root",
+                                        "label": "Root"
+                                    },
+                                    "template_area": {
+                                        "value": "header",
+                                        "label": "Header"
+                                    }
+                                }
+                            },
+                            {
+                                "name": "core/template-part",
+                                "attributes": {
+                                    "slug": "root-content-part-404",
+                                    "templateLock": "contentOnly",
+                                    "lock": {
+                                        "move": true,
+                                        "remove": true
+                                    },
+                                    "className": "wp2-root-content",
+                                    "blockstudio": {
+                                        "data": {
+                                            "template": {
+                                                "value": "404",
+                                                "label": "404"
+                                            },
+                                            "template_zone": {
+                                                "value": "root",
+                                                "label": "Root"
+                                            },
+                                            "template_area": {
+                                                "value": "content",
+                                                "label": "Content"
+                                            }
+                                        }
+                                    },
+                                    "template": {
+                                        "value": "404",
+                                        "label": "404"
+                                    },
+                                    "template_zone": {
+                                        "value": "root",
+                                        "label": "Root"
+                                    },
+                                    "template_area": {
+                                        "value": "content",
+                                        "label": "Content"
+                                    }
+                                }
+                            },
+                            {
+                                "name": "core/template-part",
+                                "attributes": {
+                                    "slug": "root-footer-part-404",
+                                    "templateLock": "contentOnly",
+                                    "lock": {
+                                        "move": true,
+                                        "remove": true
+                                    },
+                                    "className": "wp2-root-footer",
+                                    "blockstudio": {
+                                        "data": {
+                                            "template": {
+                                                "value": "404",
+                                                "label": "404"
+                                            },
+                                            "template_zone": {
+                                                "value": "root",
+                                                "label": "Root"
+                                            },
+                                            "template_area": {
+                                                "value": "footer",
+                                                "label": "Footer"
+                                            }
+                                        }
+                                    },
+                                    "template": {
+                                        "value": "404",
+                                        "label": "404"
+                                    },
+                                    "template_zone": {
+                                        "value": "root",
+                                        "label": "Root"
+                                    },
+                                    "template_area": {
+                                        "value": "footer",
+                                        "label": "Footer"
+                                    }
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "label": "Archive — Default",
+                        "value": "archive-0",
+                        "innerBlocks": [
+                            {
+                                "name": "core/template-part",
+                                "attributes": {
+                                    "slug": "root-header-part-archive",
+                                    "templateLock": "contentOnly",
+                                    "lock": {
+                                        "move": true,
+                                        "remove": true
+                                    },
+                                    "className": "wp2-root-header",
+                                    "blockstudio": {
+                                        "data": {
+                                            "template": {
+                                                "value": "archive",
+                                                "label": "Archive"
+                                            },
+                                            "template_zone": {
+                                                "value": "root",
+                                                "label": "Root"
+                                            },
+                                            "template_area": {
+                                                "value": "header",
+                                                "label": "Header"
+                                            }
+                                        }
+                                    },
+                                    "template": {
+                                        "value": "archive",
+                                        "label": "Archive"
+                                    },
+                                    "template_zone": {
+                                        "value": "root",
+                                        "label": "Root"
+                                    },
+                                    "template_area": {
+                                        "value": "header",
+                                        "label": "Header"
+                                    }
+                                }
+                            },
+                            {
+                                "name": "core/template-part",
+                                "attributes": {
+                                    "slug": "root-content-part-archive",
+                                    "templateLock": "contentOnly",
+                                    "lock": {
+                                        "move": true,
+                                        "remove": true
+                                    },
+                                    "className": "wp2-root-content",
+                                    "blockstudio": {
+                                        "data": {
+                                            "template": {
+                                                "value": "archive",
+                                                "label": "Archive"
+                                            },
+                                            "template_zone": {
+                                                "value": "root",
+                                                "label": "Root"
+                                            },
+                                            "template_area": {
+                                                "value": "content",
+                                                "label": "Content"
+                                            }
+                                        }
+                                    },
+                                    "template": {
+                                        "value": "archive",
+                                        "label": "Archive"
+                                    },
+                                    "template_zone": {
+                                        "value": "root",
+                                        "label": "Root"
+                                    },
+                                    "template_area": {
+                                        "value": "content",
+                                        "label": "Content"
+                                    }
+                                }
+                            },
+                            {
+                                "name": "core/template-part",
+                                "attributes": {
+                                    "slug": "root-footer-part-archive",
+                                    "templateLock": "contentOnly",
+                                    "lock": {
+                                        "move": true,
+                                        "remove": true
+                                    },
+                                    "className": "wp2-root-footer",
+                                    "blockstudio": {
+                                        "data": {
+                                            "template": {
+                                                "value": "archive",
+                                                "label": "Archive"
+                                            },
+                                            "template_zone": {
+                                                "value": "root",
+                                                "label": "Root"
+                                            },
+                                            "template_area": {
+                                                "value": "footer",
+                                                "label": "Footer"
+                                            }
+                                        }
+                                    },
+                                    "template": {
+                                        "value": "archive",
+                                        "label": "Archive"
+                                    },
+                                    "template_zone": {
+                                        "value": "root",
+                                        "label": "Root"
+                                    },
+                                    "template_area": {
+                                        "value": "footer",
+                                        "label": "Footer"
+                                    }
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "label": "Author — Default",
+                        "value": "author-0",
+                        "innerBlocks": [
+                            {
+                                "name": "core/template-part",
+                                "attributes": {
+                                    "slug": "root-header-part-author",
+                                    "templateLock": "contentOnly",
+                                    "lock": {
+                                        "move": true,
+                                        "remove": true
+                                    },
+                                    "className": "wp2-root-header",
+                                    "blockstudio": {
+                                        "data": {
+                                            "template": {
+                                                "value": "author",
+                                                "label": "Author"
+                                            },
+                                            "template_zone": {
+                                                "value": "root",
+                                                "label": "Root"
+                                            },
+                                            "template_area": {
+                                                "value": "header",
+                                                "label": "Header"
+                                            }
+                                        }
+                                    },
+                                    "template": {
+                                        "value": "author",
+                                        "label": "Author"
+                                    },
+                                    "template_zone": {
+                                        "value": "root",
+                                        "label": "Root"
+                                    },
+                                    "template_area": {
+                                        "value": "header",
+                                        "label": "Header"
+                                    }
+                                }
+                            },
+                            {
+                                "name": "core/template-part",
+                                "attributes": {
+                                    "slug": "root-content-part-author",
+                                    "templateLock": "contentOnly",
+                                    "lock": {
+                                        "move": true,
+                                        "remove": true
+                                    },
+                                    "className": "wp2-root-content",
+                                    "blockstudio": {
+                                        "data": {
+                                            "template": {
+                                                "value": "author",
+                                                "label": "Author"
+                                            },
+                                            "template_zone": {
+                                                "value": "root",
+                                                "label": "Root"
+                                            },
+                                            "template_area": {
+                                                "value": "content",
+                                                "label": "Content"
+                                            }
+                                        }
+                                    },
+                                    "template": {
+                                        "value": "author",
+                                        "label": "Author"
+                                    },
+                                    "template_zone": {
+                                        "value": "root",
+                                        "label": "Root"
+                                    },
+                                    "template_area": {
+                                        "value": "content",
+                                        "label": "Content"
+                                    }
+                                }
+                            },
+                            {
+                                "name": "core/template-part",
+                                "attributes": {
+                                    "slug": "root-footer-part-author",
+                                    "templateLock": "contentOnly",
+                                    "lock": {
+                                        "move": true,
+                                        "remove": true
+                                    },
+                                    "className": "wp2-root-footer",
+                                    "blockstudio": {
+                                        "data": {
+                                            "template": {
+                                                "value": "author",
+                                                "label": "Author"
+                                            },
+                                            "template_zone": {
+                                                "value": "root",
+                                                "label": "Root"
+                                            },
+                                            "template_area": {
+                                                "value": "footer",
+                                                "label": "Footer"
+                                            }
+                                        }
+                                    },
+                                    "template": {
+                                        "value": "author",
+                                        "label": "Author"
+                                    },
+                                    "template_zone": {
+                                        "value": "root",
+                                        "label": "Root"
+                                    },
+                                    "template_area": {
+                                        "value": "footer",
+                                        "label": "Footer"
+                                    }
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "label": "Front Page — Default",
+                        "value": "front-page-0",
+                        "innerBlocks": [
+                            {
+                                "name": "core/template-part",
+                                "attributes": {
+                                    "slug": "root-header-part-front-page",
+                                    "templateLock": "contentOnly",
+                                    "lock": {
+                                        "move": true,
+                                        "remove": true
+                                    },
+                                    "className": "wp2-root-header",
+                                    "blockstudio": {
+                                        "data": {
+                                            "template": {
+                                                "value": "front-page",
+                                                "label": "Front Page"
+                                            },
+                                            "template_zone": {
+                                                "value": "root",
+                                                "label": "Root"
+                                            },
+                                            "template_area": {
+                                                "value": "header",
+                                                "label": "Header"
+                                            }
+                                        }
+                                    },
+                                    "template": {
+                                        "value": "front-page",
+                                        "label": "Front Page"
+                                    },
+                                    "template_zone": {
+                                        "value": "root",
+                                        "label": "Root"
+                                    },
+                                    "template_area": {
+                                        "value": "header",
+                                        "label": "Header"
+                                    }
+                                }
+                            },
+                            {
+                                "name": "core/template-part",
+                                "attributes": {
+                                    "slug": "root-content-part-front-page",
+                                    "templateLock": "contentOnly",
+                                    "lock": {
+                                        "move": true,
+                                        "remove": true
+                                    },
+                                    "className": "wp2-root-content",
+                                    "blockstudio": {
+                                        "data": {
+                                            "template": {
+                                                "value": "front-page",
+                                                "label": "Front Page"
+                                            },
+                                            "template_zone": {
+                                                "value": "root",
+                                                "label": "Root"
+                                            },
+                                            "template_area": {
+                                                "value": "content",
+                                                "label": "Content"
+                                            }
+                                        }
+                                    },
+                                    "template": {
+                                        "value": "front-page",
+                                        "label": "Front Page"
+                                    },
+                                    "template_zone": {
+                                        "value": "root",
+                                        "label": "Root"
+                                    },
+                                    "template_area": {
+                                        "value": "content",
+                                        "label": "Content"
+                                    }
+                                }
+                            },
+                            {
+                                "name": "core/template-part",
+                                "attributes": {
+                                    "slug": "root-footer-part-front-page",
+                                    "templateLock": "contentOnly",
+                                    "lock": {
+                                        "move": true,
+                                        "remove": true
+                                    },
+                                    "className": "wp2-root-footer",
+                                    "blockstudio": {
+                                        "data": {
+                                            "template": {
+                                                "value": "front-page",
+                                                "label": "Front Page"
+                                            },
+                                            "template_zone": {
+                                                "value": "root",
+                                                "label": "Root"
+                                            },
+                                            "template_area": {
+                                                "value": "footer",
+                                                "label": "Footer"
+                                            }
+                                        }
+                                    },
+                                    "template": {
+                                        "value": "front-page",
+                                        "label": "Front Page"
+                                    },
+                                    "template_zone": {
+                                        "value": "root",
+                                        "label": "Root"
+                                    },
+                                    "template_area": {
+                                        "value": "footer",
+                                        "label": "Footer"
+                                    }
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "label": "Index — Default",
+                        "value": "index-0",
+                        "innerBlocks": [
+                            {
+                                "name": "core/template-part",
+                                "attributes": {
+                                    "slug": "root-header-part-index",
+                                    "templateLock": "contentOnly",
+                                    "lock": {
+                                        "move": true,
+                                        "remove": true
+                                    },
+                                    "className": "wp2-root-header",
+                                    "blockstudio": {
+                                        "data": {
+                                            "template": {
+                                                "value": "index",
+                                                "label": "Index"
+                                            },
+                                            "template_zone": {
+                                                "value": "root",
+                                                "label": "Root"
+                                            },
+                                            "template_area": {
+                                                "value": "header",
+                                                "label": "Header"
+                                            }
+                                        }
+                                    },
+                                    "template": {
+                                        "value": "index",
+                                        "label": "Index"
+                                    },
+                                    "template_zone": {
+                                        "value": "root",
+                                        "label": "Root"
+                                    },
+                                    "template_area": {
+                                        "value": "header",
+                                        "label": "Header"
+                                    }
+                                }
+                            },
+                            {
+                                "name": "core/template-part",
+                                "attributes": {
+                                    "slug": "root-content-part-index",
+                                    "templateLock": "contentOnly",
+                                    "lock": {
+                                        "move": true,
+                                        "remove": true
+                                    },
+                                    "className": "wp2-root-content",
+                                    "blockstudio": {
+                                        "data": {
+                                            "template": {
+                                                "value": "index",
+                                                "label": "Index"
+                                            },
+                                            "template_zone": {
+                                                "value": "root",
+                                                "label": "Root"
+                                            },
+                                            "template_area": {
+                                                "value": "content",
+                                                "label": "Content"
+                                            }
+                                        }
+                                    },
+                                    "template": {
+                                        "value": "index",
+                                        "label": "Index"
+                                    },
+                                    "template_zone": {
+                                        "value": "root",
+                                        "label": "Root"
+                                    },
+                                    "template_area": {
+                                        "value": "content",
+                                        "label": "Content"
+                                    }
+                                }
+                            },
+                            {
+                                "name": "core/template-part",
+                                "attributes": {
+                                    "slug": "root-footer-part-index",
+                                    "templateLock": "contentOnly",
+                                    "lock": {
+                                        "move": true,
+                                        "remove": true
+                                    },
+                                    "className": "wp2-root-footer",
+                                    "blockstudio": {
+                                        "data": {
+                                            "template": {
+                                                "value": "index",
+                                                "label": "Index"
+                                            },
+                                            "template_zone": {
+                                                "value": "root",
+                                                "label": "Root"
+                                            },
+                                            "template_area": {
+                                                "value": "footer",
+                                                "label": "Footer"
+                                            }
+                                        }
+                                    },
+                                    "template": {
+                                        "value": "index",
+                                        "label": "Index"
+                                    },
+                                    "template_zone": {
+                                        "value": "root",
+                                        "label": "Root"
+                                    },
+                                    "template_area": {
+                                        "value": "footer",
+                                        "label": "Footer"
+                                    }
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "label": "Page — Default",
+                        "value": "page-0",
+                        "innerBlocks": [
+                            {
+                                "name": "core/template-part",
+                                "attributes": {
+                                    "slug": "root-header-part-page",
+                                    "templateLock": "contentOnly",
+                                    "lock": {
+                                        "move": true,
+                                        "remove": true
+                                    },
+                                    "className": "wp2-root-header",
+                                    "blockstudio": {
+                                        "data": {
+                                            "template": {
+                                                "value": "page",
+                                                "label": "Page"
+                                            },
+                                            "template_zone": {
+                                                "value": "root",
+                                                "label": "Root"
+                                            },
+                                            "template_area": {
+                                                "value": "header",
+                                                "label": "Header"
+                                            }
+                                        }
+                                    },
+                                    "template": {
+                                        "value": "page",
+                                        "label": "Page"
+                                    },
+                                    "template_zone": {
+                                        "value": "root",
+                                        "label": "Root"
+                                    },
+                                    "template_area": {
+                                        "value": "header",
+                                        "label": "Header"
+                                    }
+                                }
+                            },
+                            {
+                                "name": "core/template-part",
+                                "attributes": {
+                                    "slug": "root-content-part-page",
+                                    "templateLock": "contentOnly",
+                                    "lock": {
+                                        "move": true,
+                                        "remove": true
+                                    },
+                                    "className": "wp2-root-content",
+                                    "blockstudio": {
+                                        "data": {
+                                            "template": {
+                                                "value": "page",
+                                                "label": "Page"
+                                            },
+                                            "template_zone": {
+                                                "value": "root",
+                                                "label": "Root"
+                                            },
+                                            "template_area": {
+                                                "value": "content",
+                                                "label": "Content"
+                                            }
+                                        }
+                                    },
+                                    "template": {
+                                        "value": "page",
+                                        "label": "Page"
+                                    },
+                                    "template_zone": {
+                                        "value": "root",
+                                        "label": "Root"
+                                    },
+                                    "template_area": {
+                                        "value": "content",
+                                        "label": "Content"
+                                    }
+                                }
+                            },
+                            {
+                                "name": "core/template-part",
+                                "attributes": {
+                                    "slug": "root-footer-part-page",
+                                    "templateLock": "contentOnly",
+                                    "lock": {
+                                        "move": true,
+                                        "remove": true
+                                    },
+                                    "className": "wp2-root-footer",
+                                    "blockstudio": {
+                                        "data": {
+                                            "template": {
+                                                "value": "page",
+                                                "label": "Page"
+                                            },
+                                            "template_zone": {
+                                                "value": "root",
+                                                "label": "Root"
+                                            },
+                                            "template_area": {
+                                                "value": "footer",
+                                                "label": "Footer"
+                                            }
+                                        }
+                                    },
+                                    "template": {
+                                        "value": "page",
+                                        "label": "Page"
+                                    },
+                                    "template_zone": {
+                                        "value": "root",
+                                        "label": "Root"
+                                    },
+                                    "template_area": {
+                                        "value": "footer",
+                                        "label": "Footer"
+                                    }
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "label": "Search — Default",
+                        "value": "search-0",
+                        "innerBlocks": [
+                            {
+                                "name": "core/template-part",
+                                "attributes": {
+                                    "slug": "root-header-part-search",
+                                    "templateLock": "contentOnly",
+                                    "lock": {
+                                        "move": true,
+                                        "remove": true
+                                    },
+                                    "className": "wp2-root-header",
+                                    "blockstudio": {
+                                        "data": {
+                                            "template": {
+                                                "value": "search",
+                                                "label": "Search"
+                                            },
+                                            "template_zone": {
+                                                "value": "root",
+                                                "label": "Root"
+                                            },
+                                            "template_area": {
+                                                "value": "header",
+                                                "label": "Header"
+                                            }
+                                        }
+                                    },
+                                    "template": {
+                                        "value": "search",
+                                        "label": "Search"
+                                    },
+                                    "template_zone": {
+                                        "value": "root",
+                                        "label": "Root"
+                                    },
+                                    "template_area": {
+                                        "value": "header",
+                                        "label": "Header"
+                                    }
+                                }
+                            },
+                            {
+                                "name": "core/template-part",
+                                "attributes": {
+                                    "slug": "root-content-part-search",
+                                    "templateLock": "contentOnly",
+                                    "lock": {
+                                        "move": true,
+                                        "remove": true
+                                    },
+                                    "className": "wp2-root-content",
+                                    "blockstudio": {
+                                        "data": {
+                                            "template": {
+                                                "value": "search",
+                                                "label": "Search"
+                                            },
+                                            "template_zone": {
+                                                "value": "root",
+                                                "label": "Root"
+                                            },
+                                            "template_area": {
+                                                "value": "content",
+                                                "label": "Content"
+                                            }
+                                        }
+                                    },
+                                    "template": {
+                                        "value": "search",
+                                        "label": "Search"
+                                    },
+                                    "template_zone": {
+                                        "value": "root",
+                                        "label": "Root"
+                                    },
+                                    "template_area": {
+                                        "value": "content",
+                                        "label": "Content"
+                                    }
+                                }
+                            },
+                            {
+                                "name": "core/template-part",
+                                "attributes": {
+                                    "slug": "root-footer-part-search",
+                                    "templateLock": "contentOnly",
+                                    "lock": {
+                                        "move": true,
+                                        "remove": true
+                                    },
+                                    "className": "wp2-root-footer",
+                                    "blockstudio": {
+                                        "data": {
+                                            "template": {
+                                                "value": "search",
+                                                "label": "Search"
+                                            },
+                                            "template_zone": {
+                                                "value": "root",
+                                                "label": "Root"
+                                            },
+                                            "template_area": {
+                                                "value": "footer",
+                                                "label": "Footer"
+                                            }
+                                        }
+                                    },
+                                    "template": {
+                                        "value": "search",
+                                        "label": "Search"
+                                    },
+                                    "template_zone": {
+                                        "value": "root",
+                                        "label": "Root"
+                                    },
+                                    "template_area": {
+                                        "value": "footer",
+                                        "label": "Footer"
+                                    }
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "label": "Single — Default",
+                        "value": "single-0",
+                        "innerBlocks": [
+                            {
+                                "name": "core/template-part",
+                                "attributes": {
+                                    "slug": "root-header-part-single",
+                                    "templateLock": "contentOnly",
+                                    "lock": {
+                                        "move": true,
+                                        "remove": true
+                                    },
+                                    "className": "wp2-root-header",
+                                    "blockstudio": {
+                                        "data": {
+                                            "template": {
+                                                "value": "single",
+                                                "label": "Single"
+                                            },
+                                            "template_zone": {
+                                                "value": "root",
+                                                "label": "Root"
+                                            },
+                                            "template_area": {
+                                                "value": "header",
+                                                "label": "Header"
+                                            }
+                                        }
+                                    },
+                                    "template": {
+                                        "value": "single",
+                                        "label": "Single"
+                                    },
+                                    "template_zone": {
+                                        "value": "root",
+                                        "label": "Root"
+                                    },
+                                    "template_area": {
+                                        "value": "header",
+                                        "label": "Header"
+                                    }
+                                }
+                            },
+                            {
+                                "name": "core/template-part",
+                                "attributes": {
+                                    "slug": "root-content-part-single",
+                                    "templateLock": "contentOnly",
+                                    "lock": {
+                                        "move": true,
+                                        "remove": true
+                                    },
+                                    "className": "wp2-root-content",
+                                    "blockstudio": {
+                                        "data": {
+                                            "template": {
+                                                "value": "single",
+                                                "label": "Single"
+                                            },
+                                            "template_zone": {
+                                                "value": "root",
+                                                "label": "Root"
+                                            },
+                                            "template_area": {
+                                                "value": "content",
+                                                "label": "Content"
+                                            }
+                                        }
+                                    },
+                                    "template": {
+                                        "value": "single",
+                                        "label": "Single"
+                                    },
+                                    "template_zone": {
+                                        "value": "root",
+                                        "label": "Root"
+                                    },
+                                    "template_area": {
+                                        "value": "content",
+                                        "label": "Content"
+                                    }
+                                }
+                            },
+                            {
+                                "name": "core/template-part",
+                                "attributes": {
+                                    "slug": "root-footer-part-single",
+                                    "templateLock": "contentOnly",
+                                    "lock": {
+                                        "move": true,
+                                        "remove": true
+                                    },
+                                    "className": "wp2-root-footer",
+                                    "blockstudio": {
+                                        "data": {
+                                            "template": {
+                                                "value": "single",
+                                                "label": "Single"
+                                            },
+                                            "template_zone": {
+                                                "value": "root",
+                                                "label": "Root"
+                                            },
+                                            "template_area": {
+                                                "value": "footer",
+                                                "label": "Footer"
+                                            }
+                                        }
+                                    },
+                                    "template": {
+                                        "value": "single",
+                                        "label": "Single"
+                                    },
+                                    "template_zone": {
+                                        "value": "root",
+                                        "label": "Root"
+                                    },
+                                    "template_area": {
+                                        "value": "footer",
+                                        "label": "Footer"
+                                    }
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}

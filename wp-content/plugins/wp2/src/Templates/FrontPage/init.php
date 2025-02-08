@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Front Page Controller.
  *
@@ -8,7 +9,7 @@
  *
  */
 
-namespace WP2\Templates\FrontPage;
+namespace WP2\Themes\Templates\FrontPage;
 
 use WP_Query;
 
@@ -17,7 +18,8 @@ use WP_Query;
  *
  * A controller for handling front-page modifications.
  */
-class Controller {
+class Controller
+{
 
     /**
      * Post types to include in front page queries.
@@ -31,7 +33,8 @@ class Controller {
      *
      * Initializes the class and registers hooks.
      */
-    public function __construct() {
+    public function __construct()
+    {
         $this->post_types = apply_filters('wp2_front_page_post_types', ['post']);
 
         add_action('pre_get_posts', [$this, 'modify_query']);
@@ -46,7 +49,8 @@ class Controller {
      *
      * @return void
      */
-    public function modify_query(WP_Query $query): void {
+    public function modify_query(WP_Query $query): void
+    {
         if (is_admin() || ! $query->is_main_query() || ! is_front_page()) {
             return;
         }
@@ -73,7 +77,8 @@ class Controller {
  *
  * @return void
  */
-function wp2_init_front_page_controller(): void {
+function wp2_init_front_page_controller(): void
+{
     new Controller();
 }
 

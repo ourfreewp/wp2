@@ -35,8 +35,7 @@ $grid-breakpoints: (
     // Large devices (tablets and smaller laptops, reduced from 992px)
     xl: 992px,
     // Extra large devices (standard desktops, reduced from 1200px)
-    xxl: 1140px
-    // Ultra large devices (large desktops, reduced from 1440px)
+    xxl: 1140px // Ultra large devices (large desktops, reduced from 1440px)
 );
 
 $grid-columns: 12;
@@ -73,7 +72,7 @@ $zindex-levels: (
     wpadminbar: 99999 // WordPress admin bar
 );
 
-@import "../../vendor/twbs/bootstrap/scss/mixin";
+@import "../../vendor/twbs/bootstrap/scss/mixins";
 @import "../../vendor/twbs/bootstrap/scss/utilities";
 @import "../../vendor/twbs/bootstrap/scss/grid";
 @import "../../vendor/twbs/bootstrap/scss/transitions";
@@ -81,3 +80,9 @@ $zindex-levels: (
 @import "../../vendor/twbs/bootstrap/scss/utilities/api";
 
 
+
+/**
+ * Element styles
+ */
+@import "../Styles/scss/Elements/html";
+@import "../Styles/scss/Elements/body";

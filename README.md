@@ -18,7 +18,7 @@ Programmatically Generated Themes: Themes and templates are generated via JSON-b
   - Each template is self-contained, ensuring structural integrity.
 
 #### Automated Template Bootstrap Process:
-  - The wp2-bootstrap plugin automates CLI-based site generation, activation, and workflow management.
+  - The wp2-blueprint plugin automates CLI-based site generation, activation, and workflow management.
   - Webhook integrations allow automated theme and template provisioning.
 
 ## Role-Based Block & Template Access for Consistency & Maintainability
@@ -62,7 +62,7 @@ Programmatically Generated Themes: Themes and templates are generated via JSON-b
 Custom controllers define logic and styles for each template, ensuring context-specific behavior.
 
 #### Automated Cloning & Site Generation
-- wp2-bootstrap plugin provides command-line control for site generation.
+- wp2-blueprint plugin provides command-line control for site generation.
 - Webhooks trigger workflow automation during setup.
 
 ## Minimalistic Styling with Modern Tooling
@@ -91,14 +91,14 @@ Custom controllers define logic and styles for each template, ensuring context-s
 ```plaintext
 wp-content/                             # Content Directory
 ├── mu-plugins/                         # Must-use plugins
-│   └── wp2-bootstrap/                  # Template Daemon
+│   └── wp2-blueprint/                  # Template Daemon
 ├── themes/                             # Themes Directory
 │   └── wp2/                            # Core Theme
 └── plugins/                            # Plugins Directory
     ├── wp2/                            # Core Plugin
-    └── wp2-bootstrap/                  # Template Plugin
+    └── wp2-blueprint/                  # Template Plugin
 ├── wp2/                  # Core Plugin
-└── wp2-bootstrap/        # Template Bootstrap Plugin
+└── wp2-blueprint/        # Template Bootstrap Plugin
 ```
 
 ### Application Code & Assets
@@ -220,7 +220,7 @@ Each of these start with `Query` and are followed by the specific block type.
 - **Search:**- The site search block
 
 **Queried Item:**
-Replace duplicative implementations with dynamic, context-specific content. Each of these start with `QueriedItem` and are followed by the specific block type.
+Replace duplicative implementations with dynamic, context-specific content. Each of these start with `Item` and are followed by the specific block type.
 
 - **Byline:**- The queried item byline block is the primary block that wraps the queried item byline.
 - **Cover:**- The queried item cover block is the primary block that wraps the queried item cover.
@@ -277,11 +277,11 @@ Each directory name matches to the template hierarchy using pascal case (e.g., A
 
 ## Template Daemon & Plugin Lifecycle
 
-The wp2-bootstrap plugin streamlines the site generation process, ensuring a clean, programmatic creation of a new site instance:
+The wp2-blueprint plugin streamlines the site generation process, ensuring a clean, programmatic creation of a new site instance:
 
-**Daemon:**- Located in wp-content/mu-plugins/wp2-bootstrap.php, it provides CLI commands to run the bootstrapping process.
+**Daemon:**- Located in wp-content/mu-plugins/wp2-blueprint.php, it provides CLI commands to run the bootstrapping process.
 
-**Plugin Lifecycle:**- Residing in wp-content/plugins/wp2-bootstrap, the plugin handles:
+**Plugin Lifecycle:**- Residing in wp-content/plugins/wp2-blueprint, the plugin handles:
 
 - Activation
 - Deactivation

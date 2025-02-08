@@ -1,0 +1,35 @@
+{
+    "$schema": "https://app.blockstudio.dev/schema",
+    "apiVersion": 2,
+    "name": "wp2-demo/wizard",
+    "title": "Demo Wizard",
+    "category": "wp2-demo",
+    "icon": "admin-generic",
+    "description": "A wizard block",
+    "supports": {
+        "className": false,
+        "align": [
+            "wide",
+            "full"
+        ]
+    },
+    "attributes": {
+        "align": {
+            "type": "string",
+            "default": "wide"
+        },
+        "form": {
+            "type": "string",
+            "default": "2"
+        }
+    },
+    "blockstudio": {
+        "attributes": [
+            {
+                "id": "form",
+                "label": "Form",
+                "type": "text"
+            }
+        ]
+    }
+ }

@@ -1,0 +1,83 @@
+{
+    "$schema": "https://app.blockstudio.dev/schema",
+    "apiVersion": 2,
+    "name": "wp2/article-header",
+    "title": "Header",
+    "category": "wp2-article",
+    "icon": "table-row-before",
+    "description": "Display the article header",
+    "allowedBlocks": [
+        "core/group",
+        "wp2/item-media",
+        "wp2/item-term",
+        "wp2/item-title",
+        "wp2/item-subtitle",
+        "wp2/item-byline",
+        "wp2/item-dateline",
+        "wp2/item-share"
+    ],
+    "blockstudio": {
+        "attributes": [
+            {
+                "id": "option",
+                "type": "select",
+                "label": "Option",
+                "allowNull": "Select Option",
+                "options": [
+                    {
+                        "label": "Default",
+                        "value": "0",
+                        "innerBlocks": [
+                            {
+                                "name": "core/group",
+                                "innerBlocks": [
+                                    {
+                                        "name": "wp2/item-media"
+                                    },
+                                    {
+                                        "name": "core/group",
+                                        "innerBlocks": [
+                                            {
+                                                "name": "wp2/item-term"
+                                            },
+                                            {
+                                                "name": "wp2/item-title"
+                                            },
+                                            {
+                                                "name": "wp2/item-subtitle"
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "name": "core/group",
+                                        "innerBlocks": [
+                                            {
+                                                "name": "core/group",
+                                                "innerBlocks": [
+                                                    {
+                                                        "name": "wp2/item-byline"
+                                                    },
+                                                    {
+                                                        "name": "wp2/item-dateline"
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "name": "core/group",
+                                                "innerBlocks": [
+                                                    {
+                                                        "name": "wp2/item-share"
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}
