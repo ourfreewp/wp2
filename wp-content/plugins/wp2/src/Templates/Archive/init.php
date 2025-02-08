@@ -1,13 +1,14 @@
 <?php
-// Path: wp-content/plugins/wp2/src/Templates/Archive/init.php
-namespace WP2\Templates\Archive;
+// Path: wp-content/plugins/wp2/src/Themes/Templates/Archive/init.php
+namespace WP2\Themes\Templates\Archive;
 
 use WP_Query;
 
 /**
  * Handles modifications to the main query for archive pages.
  */
-class Controller {
+class Controller
+{
 
     /**
      * Post types to include in archive queries.
@@ -19,7 +20,8 @@ class Controller {
     /**
      * Constructor to initialize the class and register hooks.
      */
-    public function __construct() {
+    public function __construct()
+    {
         $this->post_types = apply_filters('wp2_archive_post_types', ['post']);
 
         add_action('pre_get_posts', [$this, 'modify_archive_query']);
@@ -34,7 +36,8 @@ class Controller {
      *
      * @return void
      */
-    public function modify_archive_query(WP_Query $query): void {
+    public function modify_archive_query(WP_Query $query): void
+    {
         if (is_admin() || ! $query->is_main_query() || ! is_archive()) {
             return;
         }
@@ -61,7 +64,8 @@ class Controller {
  *
  * @return void
  */
-function wp2_init_archive_controller(): void {
+function wp2_init_archive_controller(): void
+{
     new Controller();
 }
 

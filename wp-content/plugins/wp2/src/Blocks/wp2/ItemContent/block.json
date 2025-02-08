@@ -1,0 +1,23 @@
+{
+    "$schema": "https://app.blockstudio.dev/schema",
+    "apiVersion": 2,
+    "name": "wp2/item-content",
+    "title": "Content",
+    "category": "wp2-item",
+    "icon": "admin-generic",
+    "description": "A content block for the queried item.",
+    "supports": {
+        "className": false,
+        "customClassName": true,
+        "align": [
+            "full",
+            "wide"
+        ],
+        "renaming": true,
+        "color": {
+            "background": true,
+            "text": true
+        }
+    },
+    "blockstudio": true
+}

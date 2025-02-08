@@ -13,16 +13,34 @@ if (!defined('ABSPATH')) {
     exit;
 }
 
-// Define core plugin constants
-define('WP2_PLUGIN_DIR', plugin_dir_path(__FILE__));
-define('WP2_PLUGIN_URL', plugin_dir_url(__FILE__));
-define('WP2_THEME_DIR', WP_CONTENT_DIR . '/themes/wp2/');
-define('WP2_THEME_URL', WP_CONTENT_URL . '/themes/wp2/');
+if (!defined('WP2_PLUGIN_DIR')) {
+    define('WP2_PLUGIN_DIR', plugin_dir_path(__FILE__));
+}
+
+if (!defined('WP2_PLUGIN_URL')) {
+    define('WP2_PLUGIN_URL', plugin_dir_url(__FILE__));
+}
+
+if (!defined('WP2_THEME_DIR')) {
+    define('WP2_THEME_DIR', WP_CONTENT_DIR . '/themes/wp2/');
+}
+
+if (!defined('WP2_THEME_URL')) {
+    define('WP2_THEME_URL', WP_CONTENT_URL . '/themes/wp2/');
+}
+
+if (!defined('WP2_BLUEPRINT_DIR')) {
+    define('WP2_BLUEPRINT_DIR', WP_CONTENT_DIR . '/plugins/wp2-blueprint/');
+}
+
+if (!defined('WP2_BLUEPRINT_URL')) {
+    define('WP2_BLUEPRINT_URL', WP_CONTENT_URL . '/plugins/wp2-blueprint/');
+}
 
 /**
- * WP2 Bootstrap Class
+ * WP2 Core Plugin
  */
-class Bootstrap
+class Init
 {
 
     public function __construct()
@@ -70,11 +88,12 @@ class Bootstrap
     {
         return [
             WP2_PLUGIN_DIR . 'src/Assets',
-            WP2_PLUGIN_DIR . 'src/BlockExtensions',
-            WP2_PLUGIN_DIR . 'src/Blocks',
+            WP2_PLUGIN_DIR . 'src/Blocks/core',
+            WP2_PLUGIN_DIR . 'src/Blocks/wp2',
             WP2_PLUGIN_DIR . 'src/Filters',
             WP2_PLUGIN_DIR . 'src/Helpers',
             WP2_PLUGIN_DIR . 'src/Templates',
+            WP2_BLUEPRINT_DIR . 'src/Wiki',
         ];
     }
 
@@ -89,6 +108,8 @@ class Bootstrap
         }
     }
 }
+/**
+ * Initialize the plugin
+ */
 
-// Initialize the Bootstrap class
-new Bootstrap();
+new Init();

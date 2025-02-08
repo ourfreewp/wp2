@@ -1,0 +1,10 @@
+{
+    "$schema": "https://app.blockstudio.dev/schema",
+    "apiVersion": 2,
+    "name": "wp2/item-share",
+    "title": "Share",
+    "category": "wp2-item",
+    "icon": "share",
+    "description": "Display share buttons for a queried item",
+    "blockstudio": true
+}

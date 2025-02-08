@@ -8,21 +8,23 @@
  *
  */
 
-namespace WP2\Templates\NotFound;
+namespace WP2\Themes\Templates\Error404;
 
 /**
  * Class ErrorController
  *
  * Handles custom logic for WordPress 404 pages.
  */
-class Controller {
+class Controller
+{
 
     /**
      * Constructor.
      *
      * Initializes the class and registers hooks.
      */
-    public function __construct() {
+    public function __construct()
+    {
         $this->disable_permalink_guessing();
     }
 
@@ -34,7 +36,8 @@ class Controller {
      *
      * @return void
      */
-    private function disable_permalink_guessing(): void {
+    private function disable_permalink_guessing(): void
+    {
         add_filter('do_redirect_guess_404_permalink', '__return_false');
     }
 }
@@ -47,11 +50,11 @@ class Controller {
  *
  * @return void
  */
-function wp2_init_404_controller(): void {
+function wp2_init_themes_templates_error404_controller(): void
+{
     new Controller();
 }
 
-/**
- * Hooks into WordPress to initialize the Error 404 controller at the right moment.
- */
-add_action('init', __NAMESPACE__ . '\wp2_init_404_controller', 30);
+add_action('init', function () {
+    wp2_init_themes_templates_error404_controller();
+}, 21);
