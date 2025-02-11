@@ -1,7 +1,7 @@
 <?php
 // Path: wp-content/plugins/wp2-wiki/src/Wiki/Types/Readme/init.php
 
-namespace WP2\Wiki\Types\Readme;
+namespace WP2\Wiki\Types\Singles;
 
 
 class SingleController
