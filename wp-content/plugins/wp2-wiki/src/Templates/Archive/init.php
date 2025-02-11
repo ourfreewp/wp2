@@ -1,7 +1,7 @@
 <?php
 // Path: wp-content/plugins/wp2-wiki/src/Templates/init-archive-readme.php
 
-namespace WP2\Wiki\Templates\Archives;
+namespace WP2_Wiki\Templates\Archives;
 
 
 class Controller

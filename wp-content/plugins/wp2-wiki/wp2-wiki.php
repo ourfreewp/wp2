@@ -6,7 +6,7 @@
  * Version: 1.0
  **/
 
-namespace WP2\Wiki;
+namespace WP2_Wiki;
 
 // Prevent direct access
 if (!defined('ABSPATH')) {

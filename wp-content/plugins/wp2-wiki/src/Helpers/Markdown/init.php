@@ -1,6 +1,6 @@
 <?php
 // Path: wp-content/plugins/wp2-wiki/src/Helpers/Markdown/init.php
-namespace WP2\Wiki\Helpers\Markdown;
+namespace WP2_Wiki\Helpers\Markdown;
 
 include_once WP2_WIKI_DIR . '/src/vendor/autoload.php';
 

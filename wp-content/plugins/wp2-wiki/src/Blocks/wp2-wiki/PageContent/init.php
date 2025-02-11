@@ -1,12 +1,12 @@
 <?php
 // Path: wp-content/plugins/wp2-wiki/src/Blocks/wp2-wiki/PageContent/init.php
-namespace WP2\Wiki\Blocks\PageContent;
+namespace WP2_Wiki\Blocks\PageContent;
 
 use WP_Filesystem;
 
 use WP2\Helpers\Event\ActionScheduler\Controller as ActionScheduler;
 
-use WP2\Wiki\Helpers\Markdown\Controller as Parser;
+use WP2_Wiki\Helpers\Markdown\Controller as Parser;
 
 /**
  * Handles scanning for README files, stashing them in options,
@@ -89,6 +89,7 @@ class Controller
      */
     private function prepare_option_data(string $path, ?string $raw_file_content): array
     {
+        $this->parser = new Parser();
         $results = $this->parser->process_readme($raw_file_content, $path) ?: [];
 
         return $results;
