@@ -98,6 +98,11 @@ class Controller
         'wp2_misc_blocks' => [
             'wp2/stretched-link',
         ],
+        'wp2_wiki_blocks' => [
+            'wp2-wiki/readme',
+            'wp2-wiki/nav-primary',
+            'wp2-wiki/nav-secondary',
+        ],
     ];
 
     /**
@@ -137,7 +142,9 @@ class Controller
         }
 
         if (in_array('administrator', $user->roles)) {
-            return array_merge();
+            return array_merge(
+                self::BLOCK_BUNDLES['wp2_wiki_blocks']
+            );
         }
 
         return self::BLOCK_BUNDLES['core_blocks'];
