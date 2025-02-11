@@ -1,1 +1,7 @@
 # Templates
+
+## Areas
+
+## Blocks
+
+## Parts

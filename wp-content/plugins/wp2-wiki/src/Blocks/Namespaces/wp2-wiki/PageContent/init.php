@@ -231,8 +231,6 @@ class Controller
             $post_id = wp_insert_post($post_args);
         }
 
-        error_log('Post ID: ' . $post_id);
-
         return $post_id;
     }
 

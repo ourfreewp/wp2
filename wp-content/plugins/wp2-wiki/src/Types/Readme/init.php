@@ -1,10 +1,10 @@
 <?php
-// Path: wp-content/plugins/wp2-wiki/src/Wiki/Types/init-single-readme.php
+// Path: wp-content/plugins/wp2-wiki/src/Wiki/Types/Readme/init.php
 
-namespace WP2_Wiki\Types\Singles;
+namespace WP2\Wiki\Types\Singles;
 
 
-class READMEController
+class SingleController
 {
 
     /**
@@ -26,7 +26,10 @@ class READMEController
      *
      * @var string
      */
-    private $type = 'readme';
+    private $type = 'wp2_wiki_readme';
+    private $single_slug = 'wp2-readme';
+    private $archive_slug = 'wp2-readme';
+    private $show_in_menu = 'edit.php?post_type=' . 'wp2_wiki_doc';
 
     /**
      * Constructor
@@ -40,8 +43,7 @@ class READMEController
     {
 
         $args   = $this->set_args();
-        $prefix = $this->prefix;
-        $type   = $this->prefix . '_' . $this->type;
+        $type   = $this->type;
 
         register_post_type($type, $args);
     }
@@ -51,13 +53,14 @@ class READMEController
     {
 
         $text_domain = $this->text_domain;
-        $plural      = 'READMEs';
+        $plural      = 'README';
         $singular    = 'README';
+        $menu_name   = 'README';
 
         $labels = [
             'name'               => _x($plural, 'post type general name', $text_domain),
             'singular_name'      => _x($singular, 'post type singular name', $text_domain),
-            'menu_name'          => _x($plural, 'admin menu', $text_domain),
+            'menu_name'          => _x($menu_name, 'admin menu', $text_domain),
             'name_admin_bar'     => _x($singular, 'add new on admin bar', $text_domain),
             'add_new'            => _x('Add New', $singular, $text_domain),
             'add_new_item'       => __('Add New ' . $singular, $text_domain),
@@ -79,18 +82,22 @@ class READMEController
 
         $labels = $this->set_labels();
 
+        $slug = $this->single_slug;
+        $archive_slug = $this->archive_slug;
+        $show_in_menu = $this->show_in_menu;
+
         $args = [
             'labels'             => $labels,
             'public'             => true,
             'publicly_queryable' => true,
             'show_ui'            => true,
-            'show_in_menu'       => true,
+            'show_in_menu'       => $show_in_menu,
             'query_var'          => true,
             'rewrite'            => [
-                'slug' => 'wp2-readme',
+                'slug' => $slug,
             ],
             'capability_type'    => 'post',
-            'has_archive'        => 'wp2-readmes',
+            'has_archive'        => $archive_slug,
             'hierarchical'       => true,
             'supports'           => ['title', 'editor', 'thumbnail', 'excerpt', 'comments', 'page-attributes', 'custom-fields', 'revisions'],
             'show_in_rest'       => true,
@@ -104,4 +111,4 @@ class READMEController
     }
 }
 
-new READMEController();
+new SingleController();

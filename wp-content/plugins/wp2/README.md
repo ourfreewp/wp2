@@ -1,1 +1,1 @@
-# Core
+# WP2 Core

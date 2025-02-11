@@ -1,13 +1,13 @@
 <?php
-// Path: wp-content/plugins/wp2/src/Filters/init-block-patterns.php
-namespace WP2\Filters;
+// Path: wp-content/plugins/wp2/src/Blocks/Settings/Patterns/init.php
+namespace WP2\Blocks\Settings\Patterns;
 
 use WP_Block_Patterns_Registry;
 
 /**
  * Manages block patterns and related functionalities.
  */
-class BlockPatternController
+class Controller
 {
     private $prefix = 'wp2';
 
@@ -73,10 +73,8 @@ class BlockPatternController
  */
 function wp2_block_pattern_settings()
 {
-    new BlockPatternController();
+    new Controller();
 }
 
 // Hook initialization.
-add_action('init', function () {
-    wp2_block_pattern_settings();
-}, 99);
+add_action('init', __NAMESPACE__ . '\\wp2_block_pattern_settings', 20);

@@ -1,6 +1,6 @@
 <?php
-// Path: wp-content/plugins/wp2/src/Blocks/init-rules.php
-namespace WP2\Blocks\Rules;
+// Path: wp-content/plugins/wp2/src/Blocks/Settings/Permissions/init.php
+namespace WP2\Blocks\Settings\Permissions;
 
 /**
  * Manages block types and related functionalities.
@@ -203,13 +203,11 @@ class Controller
  */
 function wp2_init_block_rules()
 {
-    $block_type_controller = new BlockTypeController();
+    $controller = new Controller();
 
     // Filter allowed block types.
-    add_filter('allowed_block_types_all', [$block_type_controller, 'filter_allowed_block_types'], 10, 2);
+    add_filter('allowed_block_types_all', [$controller, 'filter_allowed_block_types'], 10, 2);
 }
 
 // Hook initialization.
-add_action('init', function () {
-    wp2_init_block_rules();
-}, 22);
+add_action('init', __NAMESPACE__ . '\\wp2_init_block_rules', 20);

@@ -26,31 +26,32 @@ class Controller
      *
      * @var string
      */
-    private $taxonomy = 'section';
+    private $taxonomy = 'wp2_wiki_section';
 
     /**
      * Initial Post Type
      *
      * @var array
      */
-    private $post_type = 'readme';
+    private $post_types = [
+        'wp2_wiki_thing',
+        'wp2_wiki_readme',
+    ];
     /**
      * Constructor
      */
     public function __construct()
     {
-        add_action('init', [$this, 'register_type'], 12);
+        add_action('init', [$this, 'register_type'], 20);
     }
 
     public function register_type()
     {
 
         $args   = $this->set_args();
-        $prefix = $this->prefix;
-        $taxonomy = $this->prefix . '_' . $this->taxonomy;
-        $post_type = $this->prefix . '_' . $this->post_type;
+        $labels = $this->set_labels();
 
-        register_taxonomy($taxonomy, [$post_type], $args);
+        register_taxonomy($this->taxonomy, $this->post_types, $args);
     }
 
     // Set labels

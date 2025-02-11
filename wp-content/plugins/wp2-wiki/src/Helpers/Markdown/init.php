@@ -104,8 +104,6 @@ class Controller
         $toc         = self::get_toc($html);
         $raw         = trim($raw_file_content);
 
-        error_log('Processing README: ' . $title);
-
         return [
             'option_name' => 'wp2_wiki_readme_' . md5($path),
             'path'        => $path,

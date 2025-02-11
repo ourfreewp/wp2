@@ -1,11 +1,11 @@
 <?php
-// Path: wp-content/plugins/wp2/src/Filters/init-block-editor.php
-namespace WP2\Filters;
+// Path: wp-content/plugins/wp2/src/Blocks/Settings/Preferences/init.php
+namespace WP2\Blocks\Settings\Preferences;
 
 /**
  * Manages block editor settings and related functionalities.
  */
-class BlockEditorController
+class Controller
 {
     /**
      * Sets the post lock timeout window.
@@ -60,21 +60,19 @@ class BlockEditorController
  */
 function wp2_block_editor_settings()
 {
-    $block_editor_controller = new BlockEditorController();
+    $controller = new Controller();
 
     // Set post lock timeout window.
-    add_filter('wp_check_post_lock_window', [$block_editor_controller, 'set_post_lock_window']);
+    add_filter('wp_check_post_lock_window', [$controller, 'set_post_lock_window']);
 
     // Restrict code editor to administrators.
-    add_filter('block_editor_settings_all', [$block_editor_controller, 'restrict_code_editor_for_non_admins']);
+    add_filter('block_editor_settings_all', [$controller, 'restrict_code_editor_for_non_admins']);
 
     // Disable Openverse media category.
-    add_filter('block_editor_settings_all', [$block_editor_controller, 'disable_openverse_media_category']);
+    add_filter('block_editor_settings_all', [$controller, 'disable_openverse_media_category']);
 
     // Disable block directory.
-    add_action('init', [$block_editor_controller, 'disable_block_directory']);
+    add_action('init', [$controller, 'disable_block_directory']);
 }
 
-add_action('init', function () {
-    wp2_block_editor_settings();
-}, 22);
+add_action('init', __NAMESPACE__ . '\\wp2_block_editor_settings', 20);

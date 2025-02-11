@@ -1,1 +1,9 @@
-# WP2 Assets
+# Assets
+
+## Images
+
+## Fonts
+
+## Scripts
+
+## Styles

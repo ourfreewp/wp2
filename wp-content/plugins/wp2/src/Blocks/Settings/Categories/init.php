@@ -1,6 +1,6 @@
 <?php
-// Path: wp-content/plugins/wp2/src/Blocks/Categories/init.php
-namespace WP2\Blocks\Categories;
+// Path: wp-content/plugins/wp2/src/Blocks/Settings/Categories/init.php
+namespace WP2\Blocks\Settings\Categories;
 
 /**
  * Handles modifications to block categories for template blocks.
@@ -136,10 +136,8 @@ class Controller
  */
 function wp2_init_block_categories()
 {
-    $template_block_controller = new Controller();
-    add_filter('block_categories_all', [$template_block_controller, 'register_categories'], 20, 1);
+    $controller = new Controller();
+    add_filter('block_categories_all', [$controller, 'register_categories'], 20, 1);
 }
 
-add_action('init', function () {
-    wp2_init_block_categories();
-}, 22);
+add_action('init', __NAMESPACE__ . '\\wp2_init_block_categories', 20);

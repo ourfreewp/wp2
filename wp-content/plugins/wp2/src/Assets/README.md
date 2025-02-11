@@ -1,1 +1,5 @@
 # Assets
+
+## Styles
+
+## Scripts
