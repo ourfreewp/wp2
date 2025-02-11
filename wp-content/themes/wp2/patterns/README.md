@@ -1,1 +1,1 @@
-# WP2 Patterns
+# Patterns

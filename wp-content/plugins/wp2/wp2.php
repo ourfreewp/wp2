@@ -89,8 +89,9 @@ class Init
     {
         return [
             WP2_PLUGIN_DIR . '/src/Assets',
-            WP2_PLUGIN_DIR . '/src/Blocks/core',
-            WP2_PLUGIN_DIR . '/src/Blocks/wp2',
+            WP2_PLUGIN_DIR . '/src/Blocks/Namespaces/core',
+            WP2_PLUGIN_DIR . '/src/Blocks/Namespaces/wp2',
+            WP2_PLUGIN_DIR . '/src/Blocks/Settings',
             WP2_PLUGIN_DIR . '/src/Filters',
             WP2_PLUGIN_DIR . '/src/Helpers',
             WP2_PLUGIN_DIR . '/src/Templates',

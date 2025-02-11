@@ -1,6 +1,6 @@
 <?php
 // Path: wp-content/plugins/wp2-wiki/src/Helpers/Markdown/init.php
-namespace WP2\Wiki\Helpers\Markdown;
+namespace WP2_Wiki\Helpers\Markdown;
 
 include_once WP2_WIKI_DIR . '/src/vendor/autoload.php';
 
@@ -103,8 +103,6 @@ class Controller
         $title       = self::get_title($title_value, $name);
         $toc         = self::get_toc($html);
         $raw         = trim($raw_file_content);
-
-        error_log('Processing README: ' . $title);
 
         return [
             'option_name' => 'wp2_wiki_readme_' . md5($path),

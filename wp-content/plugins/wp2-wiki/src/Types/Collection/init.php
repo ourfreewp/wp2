@@ -26,14 +26,17 @@ class Controller
      *
      * @var string
      */
-    private $taxonomy = 'collection';
+    private $taxonomy = 'wp2_wiki_collection';
 
     /**
      * Initial Post Type
      *
      * @var array
      */
-    private $post_type = 'readme';
+    private $post_types = [
+        'wp2_wiki_thing',
+        'wp2_wiki_readme',
+    ];
     /**
      * Constructor
      */
@@ -47,10 +50,8 @@ class Controller
 
         $args   = $this->set_args();
         $prefix = $this->prefix;
-        $taxonomy = $this->prefix . '_' . $this->taxonomy;
-        $post_type = $this->prefix . '_' . $this->post_type;
 
-        register_taxonomy($taxonomy, [$post_type], $args);
+        register_taxonomy($this->taxonomy, $this->post_types, $args);
     }
 
     // Set labels

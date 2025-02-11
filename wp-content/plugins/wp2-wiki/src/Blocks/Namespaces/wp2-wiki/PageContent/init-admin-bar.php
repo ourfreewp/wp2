@@ -1,6 +1,6 @@
 <?php
 
-namespace WP2\Wiki\Blocks\README;
+namespace WP2_Wiki\Blocks\README;
 
 use WP2\Helpers\Event\ActionScheduler\Controller as ActionScheduler;
 use WP_Admin_Bar;

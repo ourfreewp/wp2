@@ -6,7 +6,7 @@
  * Version: 1.0
  **/
 
-namespace WP2\Wiki;
+namespace WP2_Wiki;
 
 // Prevent direct access
 if (!defined('ABSPATH')) {
@@ -86,7 +86,7 @@ class Init
     {
         return [
             WP2_WIKI_DIR . '/src/Assets',
-            WP2_WIKI_DIR . '/src/Blocks/wp2-wiki',
+            WP2_WIKI_DIR . '/src/Blocks/Namespaces/wp2-wiki',
             WP2_WIKI_DIR . '/src/Helpers',
             WP2_WIKI_DIR . '/src/Templates',
             WP2_WIKI_DIR . '/src/Types',

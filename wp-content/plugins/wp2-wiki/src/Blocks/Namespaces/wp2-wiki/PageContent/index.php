@@ -1,7 +1,7 @@
 <?php
 // Path: wp-content/plugins/wp2-wiki/src/Blocks/PageContent/index.php
 
-namespace WP2\Wiki\Blocks\PageContent;
+namespace WP2_Wiki\Blocks\PageContent;
 
 $post_id = $b['postId'];
 

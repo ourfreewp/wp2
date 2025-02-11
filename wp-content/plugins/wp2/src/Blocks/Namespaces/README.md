@@ -1,0 +1,5 @@
+# Namespaces
+
+## Core
+
+## WP2

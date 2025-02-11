@@ -1,1 +1,7 @@
-# SCSS Styles
+# SCSS
+
+## Blocks
+
+## Elements
+
+## Zones
