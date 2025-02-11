@@ -1,7 +1,7 @@
 <?php
 // Path: wp-content/plugins/wp2-wiki/src/Blocks/NavPrimary/index.php
 
-namespace WP2\Wiki\Blocks\NavPrimary;
+namespace WP2_Wiki\Blocks\NavPrimary;
 
 $prefix = 'wp2_wiki';
 $type   = 'readme';

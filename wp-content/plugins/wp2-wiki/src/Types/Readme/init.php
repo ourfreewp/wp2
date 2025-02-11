@@ -1,7 +1,7 @@
 <?php
 // Path: wp-content/plugins/wp2-wiki/src/Wiki/Types/init-single-readme.php
 
-namespace WP2\Wiki\Types\Singles;
+namespace WP2_Wiki\Types\Singles;
 
 
 class READMEController

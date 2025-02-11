@@ -1,7 +1,7 @@
 <?php
 // Path: wp-content/plugins/wp2-wiki/src/Wiki/Blocks/README/init-meta.php
 
-namespace WP2\Wiki\Blocks\Readme;
+namespace WP2_Wiki\Blocks\Readme;
 
 
 

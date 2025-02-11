@@ -1,7 +1,7 @@
 <?php
 // Path: wp-content/plugins/wp2-wiki/src/Types/Collection/init.php
 
-namespace WP2\Wiki\Types\Collection;
+namespace WP2_Wiki\Types\Collection;
 
 
 class Controller
