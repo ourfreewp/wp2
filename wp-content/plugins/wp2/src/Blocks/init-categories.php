@@ -61,6 +61,14 @@ class Controller
             'slug'  => 'utility',
             'title' => 'Utility',
         ],
+        [
+            'slug'  => 'new',
+            'title' => 'New',
+        ],
+        [
+            'slug'  => 'wiki',
+            'title' => 'Wiki',
+        ],
     ];
 
     /**

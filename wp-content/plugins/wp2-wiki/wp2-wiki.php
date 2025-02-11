@@ -1,24 +1,24 @@
 <?php
-// Path: wp-content/plugins/wp2/wp2.php
+// Path: wp-content/plugins/wp2/wp2-wiki.php
 /**
- * Plugin Name: WP2
- * Description: The core plugin for the WP2 website.
+ * Plugin Name: WP2 Wiki
+ * Description: The wiki plugin for the WP2 website.
  * Version: 1.0
  **/
 
-namespace WP2;
+namespace WP2\Wiki;
 
 // Prevent direct access
 if (!defined('ABSPATH')) {
     exit;
 }
 
-if (!defined('WP2_PLUGIN_DIR')) {
-    define('WP2_PLUGIN_DIR', plugin_dir_path(__FILE__));
+if (!defined('WP2_WIKI_DIR')) {
+    define('WP2_WIKI_DIR', plugin_dir_path(__FILE__));
 }
 
-if (!defined('WP2_PLUGIN_URL')) {
-    define('WP2_PLUGIN_URL', plugin_dir_url(__FILE__));
+if (!defined('WP2_WIKI_URL')) {
+    define('WP2_WIKI_URL', plugin_dir_url(__FILE__));
 }
 
 if (!defined('WP2_THEME_DIR')) {
@@ -29,13 +29,10 @@ if (!defined('WP2_THEME_URL')) {
     define('WP2_THEME_URL', get_template_directory_uri());
 }
 
-if (!defined('WP2_NEW_DIR')) {
-    define('WP2_NEW_DIR', WP_CONTENT_DIR . '/plugins/wp2-new');
+if (!defined('WP2_CORE_DIR')) {
+    define('WP2_CORE_DIR', WP_CONTENT_DIR . '/plugins/wp2');
 }
 
-if (!defined('WP2_WIKI_DIR')) {
-    define('WP2_WIKI_DIR', WP_CONTENT_DIR . '/plugins/wp2-wiki');
-}
 
 
 /**
@@ -59,7 +56,7 @@ class Init
             define('WP2_TEXTDOMAIN', 'wp2');
 
             define('WP2_MU_PLUGIN_NAME', 'wp2');
-            define('WP2_MU_PLUGIN_DIR', WP2_PLUGIN_DIR . WP2_MU_PLUGIN_NAME);
+            define('WP2_MU_PLUGIN_DIR', WP2_CORE_DIR . WP2_MU_PLUGIN_NAME);
 
             // Generate site-specific plugin directory
             $site_domain = defined('WP_SITEURL')
@@ -88,12 +85,11 @@ class Init
     private function get_plugin_directories()
     {
         return [
-            WP2_PLUGIN_DIR . '/src/Assets',
-            WP2_PLUGIN_DIR . '/src/Blocks/core',
-            WP2_PLUGIN_DIR . '/src/Blocks/wp2',
-            WP2_PLUGIN_DIR . '/src/Filters',
-            WP2_PLUGIN_DIR . '/src/Helpers',
-            WP2_PLUGIN_DIR . '/src/Templates',
+            WP2_WIKI_DIR . '/src/Assets',
+            WP2_WIKI_DIR . '/src/Blocks/wp2-wiki',
+            WP2_WIKI_DIR . '/src/Helpers',
+            WP2_WIKI_DIR . '/src/Templates',
+            WP2_WIKI_DIR . '/src/Types',
         ];
     }
 

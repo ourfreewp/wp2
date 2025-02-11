@@ -1,9 +1,0 @@
-{
-    "$schema": "https://app.blockstudio.dev/schema",
-    "apiVersion": 2,
-    "name": "wp2-blueprint/thing",
-    "title": "Thing",
-    "category": "wp2-blueprint-wiki",
-    "icon": "admin-generic",
-    "description": "An individual thing"
-}

@@ -1,0 +1,10 @@
+{
+    "$schema": "https://app.blockstudio.dev/schema",
+    "apiVersion": 2,
+    "name": "wp2-wiki/readme",
+    "title": "README",
+    "category": "wp2-wiki",
+    "icon": "admin-generic",
+    "description": "An individual README",
+    "blockstudio": true
+}

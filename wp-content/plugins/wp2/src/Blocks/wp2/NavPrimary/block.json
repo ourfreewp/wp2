@@ -1,8 +1,8 @@
 {
     "$schema": "https://app.blockstudio.dev/schema",
     "apiVersion": 2,
-    "name": "wp2/navbar-primary",
-    "title": "Primary Navbar",
+    "name": "wp2/nav-primary",
+    "title": "Primary Navigation",
     "category": "wp2-navigation",
     "icon": "screenoptions",
     "description": "Primary navigation bar",
