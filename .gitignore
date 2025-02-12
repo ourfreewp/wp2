@@ -14,3 +14,6 @@
 license.txt
 readme.html
 robots.txt
+**/wp-content/themes/wp2/parts/
+**/wp-content/themes/wp2/templates/
+wp-content/debug.log
