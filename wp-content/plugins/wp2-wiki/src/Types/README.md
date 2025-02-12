@@ -1,1 +1,1 @@
-# WP2 wiki Wiki Types
+# Types

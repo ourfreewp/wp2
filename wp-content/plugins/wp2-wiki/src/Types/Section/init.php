@@ -1,7 +1,7 @@
 <?php
 // Path: wp-content/plugins/wp2-wiki/src/Types/Section/init.php
 
-namespace WP2_Wiki\Types\Section;
+namespace WP2\Wiki\Types\Section;
 
 
 class Controller

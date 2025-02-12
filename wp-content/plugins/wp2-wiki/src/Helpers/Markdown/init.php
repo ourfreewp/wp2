@@ -182,7 +182,7 @@ class Controller
         // Replace slashes with double-dashes.
         $slug = str_replace('/', '--', $path);
         $slug = strtolower($slug);
-        return $slug === '' ? 'wiki' : $slug;
+        return $slug === '' ? '' : $slug;
     }
 
 

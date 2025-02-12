@@ -1,12 +1,12 @@
 <?php
-// Path: wp-content/plugins/wp2/wp2.php
+// Path: wp-content/plugins/wp2-work/wp2-work.php
 /**
- * Plugin Name: WP2
- * Description: The core plugin for the WP2 website.
+ * Plugin Name: WP2 Work
+ * Description: The work related functionality for the WP2.
  * Version: 1.0
  **/
 
-namespace WP2;
+namespace WP2_Work;
 
 // Prevent direct access
 if (!defined('ABSPATH')) {
@@ -28,26 +28,8 @@ if (!defined('WP2_THEME_DIR')) {
 if (!defined('WP2_THEME_URL')) {
     define('WP2_THEME_URL', get_template_directory_uri());
 }
-
-if (!defined('WP2_CORE_DIR')) {
-    define('WP2_CORE_DIR', WP_CONTENT_DIR . '/plugins/wp2');
-}
-
-if (!defined('WP2_NEW_DIR')) {
-    define('WP2_NEW_DIR', WP_CONTENT_DIR . '/plugins/wp2-new');
-}
-
-if (!defined('WP2_WIKI_DIR')) {
-    define('WP2_WIKI_DIR', WP_CONTENT_DIR . '/plugins/wp2-wiki');
-}
-
-if (!defined('WP2_WORK_DIR')) {
-    define('WP2_WORK_DIR', WP_CONTENT_DIR . '/plugins/wp2-work');
-}
-
-
 /**
- * WP2 Core Plugin
+ * WP2 Work Plugin
  */
 class Init
 {
@@ -55,7 +37,6 @@ class Init
     public function __construct()
     {
         $this->define_constants();
-        add_filter('blockstudio/settings/users/ids', [$this, 'filter_user_ids']);
         add_action('init', [$this, 'initialize_blockstudio']);
     }
 
@@ -96,13 +77,8 @@ class Init
     private function get_plugin_directories()
     {
         return [
-            WP2_CORE_DIR . '/src/Assets',
-            WP2_CORE_DIR . '/src/Blocks/Namespaces/core',
-            WP2_CORE_DIR . '/src/Blocks/Namespaces/wp2',
-            WP2_CORE_DIR . '/src/Blocks/Settings',
-            WP2_CORE_DIR . '/src/Elements',
-            WP2_CORE_DIR . '/src/Helpers',
-            WP2_CORE_DIR . '/src/Templates',
+            WP2_PLUGIN_DIR . '/src/Helpers',
+            WP2_PLUGIN_DIR . '/src/Types',
         ];
     }
 

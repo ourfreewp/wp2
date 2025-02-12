@@ -1,4 +1,4 @@
-# WP2 New Moduldes
+# Moduldes
 
 ## Activate
 

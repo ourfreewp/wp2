@@ -1,1 +1,1 @@
-# Front Page Template
+# Front Page
