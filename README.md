@@ -7,13 +7,6 @@
 
 WP2 is a powerful WordPress framework, an extensive block library, and a suite of custom modules. Designed for both developers and content creators, WP2 makes it easier than ever to build engaging, high-performance websites.
 
-### Features
-
-- Site Blueprint - Kickstart your project with a pre-defined site structure.
-- Theme Framework - Build and customize themes with ease.
-- Block Library -  Leverage a wide variety of blocks to design engaging content.
-- Module Studio - Enhance your development workflow with integrated tools.
-
 ### Requirements
 
 - [InstaWP](https://app.instawp.io/register?ref=39TUWaLAzX) — Or any WordPress site supporting PHP X.0+ and WP 6.X
@@ -21,7 +14,7 @@ WP2 is a powerful WordPress framework, an extensive block library, and a suite o
 
 ## Components
 
-- [WP2 New](./wp-content/plugins/wp2-new/README.md) incluedes  daemon (must-use plugin) and module (standard plugin) that aids in the template cloning process.
+- [WP2 New](./wp-content/plugins/wp2-new/README.md) incluedes daemon (must-use plugin) and module (standard plugin) that aids in the template cloning process.
 - [WP2 Core](./wp-content/plugins/wp2/README.md) is the foundation of WP2, providing essential functionality and utilities.
 - [WP2 Theme](./wp-content/themes/wp2/README.md) is block-based, primarily configuration-based theme tailored for full-site editing.
 
@@ -60,7 +53,7 @@ A rich collection of blocks is provided to help you build content quickly and ef
 #### Dynamic Site Blocks
 [Site Alert](./wp-content/plugins/wp2/src/Blocks/Namespaces/wp2/SiteAlert/README.md) | [Site Placement](./wp-content/plugins/wp2/src/Blocks/Namespaces/wp2/SitePlacement/README.md) | [Site Item](./wp-content/plugins/wp2/src/Blocks/Namespaces/wp2/SiteItem/README.md) | [Site Menu](./wp-content/plugins/wp2/src/Blocks/Namespaces/wp2/SiteMenu/README.md) | [Site Search](./wp-content/plugins/wp2/src/Blocks/Namespaces/wp2/SiteSearch/README.md) | [Site Brand](./wp-content/plugins/wp2/src/Blocks/Namespaces/wp2/SiteBrand/README.md)
 
-### Dynamic Item Blocks
+#### Dynamic Item Blocks
 [Item Title](./wp-content/plugins/wp2/src/Blocks/Namespaces/wp2/ItemTitle/README.md) [Item Subtitle](./wp-content/plugins/wp2/src/Blocks/Namespaces/wp2/ItemSubtitle/README.md) | [Item Term](./wp-content/plugins/wp2/src/Blocks/Namespaces/wp2/ItemTerm/README.md) | [Item Byline](./wp-content/plugins/wp2/src/Blocks/Namespaces/wp2/ItemByline/README.md) | [Item Dateline](./wp-content/plugins/wp2/src/Blocks/Namespaces/wp2/ItemDateline/README.md) | [Item Media](./wp-content/plugins/wp2/src/Blocks/Namespaces/wp2/ItemMedia/README.md) | [Item Cover](./wp-content/plugins/wp2/src/Blocks/Namespaces/wp2/ItemCover/README.md) | [Item Meta](./wp-content/plugins/wp2/src/Blocks/Namespaces/wp2/ItemMeta/README.md) | [Item Photo](./wp-content/plugins/wp2/src/Blocks/Namespaces/wp2/ItemPhoto/README.md) | [Item Content](./wp-content/plugins/wp2/src/Blocks/Namespaces/wp2/ItemContent/README.md) | [Item Share](./wp-content/plugins/wp2/src/Blocks/Namespaces/wp2/ItemShare/README.md)
 
 ### Broadcast Blocks
