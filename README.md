@@ -1,28 +1,11 @@
 # WP2
 
 ## Features
-Site Blueprint
-Theme Framework
-Block Library
-Code Snippets
-Assets
-Filters
-Helpers
-Studios
 
-## Structure
-```
-├── wp-config.php       # Wordpress configuration file
-└── wp-content          # Wordpress content directory
-    ├── mu-plugins      # Wordpress must-use plugins
-    │   └── wp2-*.php   # WP2 Daemons
-    ├── plugins         # Wordpress plugins
-    │   └──wp2*            # WP2 Modules
-    ├── themes          # Wordpress themes
-    │   └── wp2         # WP2 Theme
-    └── uploads         # Wordpress uploads directory
-        └── wp2         # WP2 Uploads
-```
+- Site Blueprint
+- Theme Framework
+- Block Library
+- Code Studios
 
 ## Requirements
 - WordPress
@@ -30,10 +13,22 @@ Studios
 
 ## Components
 
+## Structure
+### App
+```
+├── wp-config.php       # Wordpress configuration file
+└── wp-content          # Wordpress content directory
+    ├── mu-plugins      # Wordpress must-use plugins
+    ├── plugins         # Wordpress plugins
+    ├── themes          # Wordpress themes
+    └── uploads         # Wordpress uploads
+```
+
 ### Daemon
 ```
 └── wp-content
     └── mu-plugins
+        └── wp2-*
         └── wp2-*.php 
 ```
 
@@ -83,46 +78,40 @@ Studios
 
 ## Modules
 
-- WP2 Core
-- WP2 New
-- WP2 Wiki
-- WP2 Work
+- WP2 - 
+- WP2 New - 
+- WP2 Wiki - 
+- WP2 Work - 
 
-### WP2 Core
+## Blocks
 
-#### Root Blocks
+### Root Blocks
 - Root, Root Header, Root Content, Root Footer
 
-#### Nav Blocks
+### Nav Blocks
 - Nav Primary, Nav Secondary
 
-#### Focus Blocks
+### Focus Blocks
 - Primary Focus, Secondary Focus
 
-#### Site Blocks
+### Site Blocks
 - Site Alert, Site Brand, Site Item, Site Menu, Site Placement, Site Search, Site Root, Site Header, Site Content, Site Footer
 
-#### Main Blocks
+### Main Blocks
 - Main Header, Main Content, Main Footer
 
-#### Content Blocks
+### Content Blocks
 - Article Header, Article Content, Article Footer
 - Query Header, Query Content, Query Footer
 
-#### Item Blocks
+### Item Blocks
 - Item Byline, Item Content, Item Cover, Item Dateline, Item Media, Item Meta, Item Photo, Item Share, Item Subtitle, Item Term, Item Title
 
-#### Broadcast Blocks
+### Broadcast Blocks
 - Broadcast Header, Broadcast Content, Broadcast Footer
 
-#### Utility Blocks
+### Utility Blocks
 - Stretched Link
-
-### WP2 New
-
-### WP2 Wiki
-
-### WP2 Work
 
 ## Plugins
 
@@ -131,8 +120,6 @@ Studios
 - Simple Page Ordering - Enables drag‑and‑drop reordering of pages.
 - Insert Special Characters - Makes it easier to add special characters within content.
 - Yoast Duplicate Post - Facilitates quick duplication of posts or pages.
-
-- Enable Media Replace - Allows you to replace media files without deleting and re‑uploading.
 - Redirection - Manages URL redirections to improve SEO and user experience.
 
 ### Development
@@ -171,6 +158,8 @@ Studios
 - InstaWP Connect - Facilitates connecting to staging or development environments.
 
 ### Media
+#### Management
+- Enable Media Replace - Allows you to replace media files without deleting and re‑uploading.
 #### SVGs
 - Safe SVG - Ensures SVG files are safely uploaded and sanitized.
 #### Generation
@@ -192,13 +181,10 @@ Studios
 - Nextend Social Login - Enables login via social media accounts.
 
 ### Revenue
-
 #### Commerce
 - ShopWP - Integrates Shopify for e‑commerce functionality.
-
 #### Advertising
 - Ads.txt Manager - Helps manage the ads.txt file to ensure advertising transparency.
-
 ### Distribution
 
 #### Search
