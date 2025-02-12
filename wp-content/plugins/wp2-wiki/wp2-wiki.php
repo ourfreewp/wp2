@@ -43,31 +43,9 @@ class Init
 
     public function __construct()
     {
-        $this->define_constants();
-        add_filter('blockstudio/settings/users/ids', [$this, 'filter_user_ids']);
         add_action('init', [$this, 'initialize_blockstudio']);
     }
 
-    private function define_constants()
-    {
-        if (!defined('WP2_NAMESPACE')) {
-            define('WP2_NAMESPACE', 'wp2');
-            define('WP2_PREFIX', 'wp2_');
-            define('WP2_TEXTDOMAIN', 'wp2');
-
-            define('WP2_MU_PLUGIN_NAME', 'wp2');
-            define('WP2_MU_PLUGIN_DIR', WP2_CORE_DIR . WP2_MU_PLUGIN_NAME);
-
-            // Generate site-specific plugin directory
-            $site_domain = defined('WP_SITEURL')
-                ? parse_url(WP_SITEURL, PHP_URL_HOST)
-                : parse_url(site_url(), PHP_URL_HOST);
-            $site_domain = sanitize_title($site_domain);
-
-            define('WP2_STD_PLUGIN_NAME', WP2_MU_PLUGIN_NAME . '-' . $site_domain);
-            define('WP2_STD_PLUGIN_DIR', WP_CONTENT_DIR . '/plugins/' . WP2_STD_PLUGIN_NAME);
-        }
-    }
 
     public function filter_user_ids($user_ids)
     {
