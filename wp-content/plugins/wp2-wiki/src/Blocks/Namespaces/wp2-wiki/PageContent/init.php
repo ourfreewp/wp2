@@ -137,6 +137,8 @@ class Controller
             'post_content' => $post_content,
         ];
 
+        $path = '/' . ltrim(str_replace('README.md', '', $path), '/');
+
         $meta = [
             '_wp2_wiki_readme_path' => $path,
             '_wp2_wiki_readme_html' => $html,
@@ -165,32 +167,13 @@ class Controller
 
         $meta_data = $post_data['meta'];
         $post_id   = $post_data['ID'];
+        $post_name = $post_data['post_name'];
 
         foreach ($meta_data as $key => $value) {
             update_post_meta($post_id, $key, $value);
         }
     }
 
-    /**
-     * Updates (or creates) a post based on the stored option data.
-     *
-     * Retrieves the option data for a given filepath, prepares the post data,
-     * and then inserts or updates the corresponding post.
-     *
-     * @param string $filepath The file path for the README.
-     * @return array The post data array, including the post ID.
-     */
-    private function handle_update_post(string $filepath): array
-    {
-        $post_data     = [];
-        $prepared_data = $this->prepare_post_data($filepath);
-        $post_id      =  $this->insert_post($prepared_data);
-
-        $post_data = $prepared_data;
-        $post_data['ID'] = $post_id;
-
-        return $post_data;
-    }
     /**
      * Inserts a new post or updates an existing one if a matching slug is found.
      *
@@ -201,13 +184,7 @@ class Controller
     {
         $post_type = $this->post_type;
 
-        $post_name = $post_data['post_name'];
-
-        if (strpos($post_name, 'wiki') === false) {
-            $post_name = 'wiki-' . $post_name;
-        }
-
-        $post_name = 'wp2-' . $post_name;
+        $post_name = !empty($post_data['post_name']) ? 'wp2-wiki-' . $post_data['post_name'] : 'wp2-wiki';
 
         $post_args = [
             'post_title'   => $post_data['post_title'],
@@ -290,54 +267,86 @@ class Controller
      */
     private function define_paths(): array
     {
-        // Basic directories you might want to inspect:
-        $wp = [
-            ABSPATH . 'README.md',
-            ABSPATH . 'wp-content/README.md',
-            ABSPATH . 'wp-content/uploads/README.md',
-            ABSPATH . 'wp-content/themes/README.md',
-            ABSPATH . 'wp-content/plugins/README.md',
-            ABSPATH . 'wp-content/mu-plugins/README.md',
+        $base_paths = [
+            ABSPATH => [
+                'README.md',
+                'wp-content/README.md',
+                'wp-content/mu-plugins/README.md',
+                'wp-content/plugins/README.md',
+                'wp-content/themes/README.md',
+                'wp-content/themes/wp2/README.md',
+                'wp-content/uploads/README.md',
+            ],
+            WP2_CORE_DIR => [
+                'README.md',
+                'src/README.md',
+                'src/Assets/README.md',
+                'src/Blocks/README.md',
+                'src/Blocks/README.md',
+                'src/Elements/README.md',
+                'src/Helpers/README.md',
+                'src/Templates/README.md',
+            ],
+            WP2_NEW_DIR => [
+                'README.md',
+                'src/README.md',
+            ],
+            WP2_WIKI_DIR => [
+                'README.md',
+                'src/README.md',
+                'src/Assets/README.md',
+                'src/Blocks/README.md',
+                'src/Helpers/README.md',
+                'src/Templates/README.md',
+                'src/Types/README.md',
+            ],
         ];
 
-        $wp2 = [
-            WP2_CORE_DIR . 'README.md',
-            WP2_CORE_DIR . 'src/README.md',
-            WP2_CORE_DIR . 'src/Blocks/README.md',
-            WP2_CORE_DIR . 'src/Blocks/core/README.md',
-            WP2_CORE_DIR . 'src/Blocks/wp2/README.md',
+        $dynamic_paths = [
+            ABSPATH => [
+                'wp-content/themes/wp2/*/README.md',
+                'wp-content/themes/wp2/*/assets/*/README.md',
+            ],
+            WP2_CORE_DIR => [
+                'src/Assets/*/README.md',
+                'src/Blocks/*/README.md',
+                'src/Blocks/Namespaces/*/README.md',
+                'src/Blocks/Namespaces/core/*/README.md',
+                'src/Blocks/Namespaces/wp2/*/README.md',
+                'src/Blocks/Settings/*/README.md',
+                'src/Elements/*/README.md',
+                'src/Helpers/*/README.md',
+                'src/Templates/*/README.md',
+            ],
+            WP2_WIKI_DIR => [
+                'src/Assets/*/README.md',
+                'src/Blocks/*/README.md',
+                'src/Blocks/Namespaces/wp2-wiki/*/README.md',
+                'src/Helpers/*/README.md',
+                'src/Templates/*/README.md',
+                'src/Types/*/README.md',
+            ],
         ];
 
-        $wiki = [
-            WP2_WIKI_DIR . 'README.md',
-            WP2_WIKI_DIR . 'src/README.md',
-            WP2_WIKI_DIR . 'src/Wiki/README.md',
-        ];
-
-        // You can extend or customize these patterns:
-        // e.g. scanning subdirectories that contain README.md
-        $wp_core       = $this->scan_dir(WP2_CORE_DIR . '/src/Blocks/core/*/README.md');
-        $wp2_core      = $this->scan_dir(WP2_CORE_DIR . '/src/Blocks/wp2/*/README.md');
-        $wp2_wiki = $this->scan_dir(WP2_WIKI_DIR . '/src/Wiki/Blocks/*/README.md');
-
-        // Combine everything:
         $paths = [];
 
-        // Merge the ones found by scanning:
-        $paths = array_merge(
-            $paths,
-            $wp,
-            $wp2,
-            $wiki,
-            $wp_core,
-            $wp2_core,
-            $wp2_wiki
-        );
+        // Add static paths
+        foreach ($base_paths as $base => $subpaths) {
+            foreach ($subpaths as $subpath) {
+                $paths[] = rtrim($base, '/') . '/' . ltrim($subpath, '/');
+            }
+        }
 
-        // Validate and clean up paths:
-        $paths = $this->validate_paths($paths);
+        // Add dynamic paths from scanned directories
+        foreach ($dynamic_paths as $base => $patterns) {
+            foreach ($patterns as $pattern) {
+                $scanned_paths = $this->scan_dir(rtrim($base, '/') . '/' . ltrim($pattern, '/'));
+                $paths = array_merge($paths, $scanned_paths);
+            }
+        }
 
-        return $paths;
+        // Validate and clean up paths
+        return $this->validate_paths($paths);
     }
     /**
      * Validates the readme_paths property, ensuring all paths are valid and exist.

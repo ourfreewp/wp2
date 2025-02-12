@@ -1,1 +1,1 @@
-# Wiki Blocks
+# Wiki Namespace

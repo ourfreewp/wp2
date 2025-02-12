@@ -1,4 +1,4 @@
-# WP2 Core Modules
+# Modules
 
 ## Assets
 
