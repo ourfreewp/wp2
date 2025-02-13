@@ -10,7 +10,7 @@
 
 namespace WP2_Daemon\WP2_New\Helpers\Webhook;
 
-class WebhookHelper
+class Controller
 {
     /**
      * Sanitize a webhook URL.
