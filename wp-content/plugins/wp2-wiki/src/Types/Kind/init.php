@@ -1,7 +1,7 @@
 <?php
 // Path: wp-content/plugins/wp2-wiki/src/Types/Kind/init.php
 
-namespace WP2\Wiki\Types\Kind;
+namespace WP2_Wiki\Types\Kind;
 
 
 class Controller

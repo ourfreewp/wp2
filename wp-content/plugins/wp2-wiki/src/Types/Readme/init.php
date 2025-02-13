@@ -1,8 +1,7 @@
 <?php
 // Path: wp-content/plugins/wp2-wiki/src/Wiki/Types/Readme/init.php
 
-namespace WP2\Wiki\Types\Singles;
-
+namespace WP2_Wiki\Types\Readme;
 
 class SingleController
 {
@@ -46,6 +45,11 @@ class SingleController
         $type   = $this->type;
 
         register_post_type($type, $args);
+
+        $this->register_meta('_wp2_wiki_readme_path');
+        $this->register_meta('_wp2_wiki_readme_html');
+        $this->register_meta('_wp2_wiki_readme_toc');
+        $this->register_meta('_wp2_wiki_readme_raw');
     }
 
     // Set labels
@@ -95,12 +99,15 @@ class SingleController
             'query_var'          => true,
             'rewrite'            => [
                 'slug' => $slug,
+                'with_front' => false,
             ],
             'capability_type'    => 'post',
             'has_archive'        => $archive_slug,
             'hierarchical'       => true,
             'supports'           => ['title', 'editor', 'thumbnail', 'excerpt', 'comments', 'page-attributes', 'custom-fields', 'revisions'],
             'show_in_rest'       => true,
+            'rest_namespace'     => 'wp2-wiki/v1',
+            'rest_base'          => 'readmes',
             'template'           => [
                 ['wp2-wiki/readme', []],
             ],
@@ -108,6 +115,23 @@ class SingleController
         ];
 
         return $args;
+    }
+
+    private function register_meta($meta_key)
+    {
+
+        register_post_meta($this->type, $meta_key, [
+            'show_in_rest' => [
+                'schema' => [
+                    'type' => 'string',
+                ],
+            ],
+            'single'       => true,
+            'type'         => 'string',
+            'auth_callback' => function () {
+                return current_user_can('edit_posts');
+            },
+        ]);
     }
 }
 
