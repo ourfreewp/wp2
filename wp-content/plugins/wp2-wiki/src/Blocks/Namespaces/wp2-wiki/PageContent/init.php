@@ -161,13 +161,14 @@ class Controller
      * @param string $filepath The file path.
      * @return void
      */
-    private function handle_sync_post(string $filepath): void
+    private function update_post(string $filepath): void
     {
-        $post_data = $this->handle_update_post($filepath);
+        $post_data = $this->prepare_post_data($filepath);
 
         $meta_data = $post_data['meta'];
-        $post_id   = $post_data['ID'];
         $post_name = $post_data['post_name'];
+
+        $post_id = $this->insert_post($post_data);
 
         foreach ($meta_data as $key => $value) {
             update_post_meta($post_id, $key, $value);
@@ -220,7 +221,7 @@ class Controller
      * @param string|null $raw_file_content  The raw file content.
      * @return void
      */
-    private function handle_sync_option(string $path, ?string $raw_file_content): void
+    private function update_option(string $path, ?string $raw_file_content): void
     {
 
         $payload = $this->prepare_option_data($path, $raw_file_content);
@@ -432,7 +433,7 @@ class Controller
     {
         $this->readme_paths = $this->define_paths();
         foreach ($this->readme_paths as $filepath) {
-            $this->handle_sync_post($filepath);
+            $this->update_post($filepath);
         }
     }
     /**
@@ -448,7 +449,7 @@ class Controller
             if (empty($raw_file_content)) {
                 $raw_file_content = '';
             }
-            $this->handle_sync_option($file, $raw_file_content);
+            $this->update_option($file, $raw_file_content);
         }
     }
 
