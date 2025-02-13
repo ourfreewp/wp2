@@ -11,12 +11,12 @@
 
 namespace WP2_Directory;
 
-use WP2_Daemon\WP2_Studio\Handlers\Instance\Controller as StudioController;
-
 // Exit if accessed directly.
 if (! defined('ABSPATH')) {
     exit;
 }
+
+use WP2_Daemon\WP2_Studio\Handlers\Instance\Controller as StudioController;
 
 /**
  * Class Plugin
@@ -66,8 +66,8 @@ class Module
         // Define the constants.
         $this->define_constants();
 
-        // Hook into WordPress init action.
-        add_action('init', [$this, 'init_module']);
+        // Initialize the plugin functionality.
+        add_action('init', [$this, 'init_module'], 100);
     }
 
 
@@ -97,18 +97,12 @@ class Module
      */
     public function init_module(): void
     {
-        // Instantiate the Studio Controller if it exists.
-        if (class_exists('\WP2_Daemon\WP2_Studio\Handlers\Instance\Controller')) {
-            $this->studio_controller = new StudioController();
+        // Instantiate the Studio Controller.
+        $this->studio_controller = new StudioController();
 
-            // Register each directory.
-            foreach ($this->directories as $directory) {
-                $this->studio_controller->register_directory($directory);
-            }
-        } else {
-            error_log('[WP2 Directory] StudioController class not found. Please ensure WP2 Studio is loaded.');
-        }
+        // Register directories with the Studio Controller.
+        $this->studio_controller->register_directories($this->directories);
     }
 }
 
-$wp2_directory = new Module();
+new Module();

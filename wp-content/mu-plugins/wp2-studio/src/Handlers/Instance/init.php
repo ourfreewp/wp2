@@ -13,12 +13,42 @@ class Controller
     /**
      * @var array Registered directories.
      */
+
+    private $option_name = 'wp2_studio_instances';
+
+
     private $directories = [];
 
     public function __construct()
     {
+        add_action('init', [$this, 'initialize_instances'], 100);
+    }
 
-        add_action('init', [$this, 'initialize_instances'], PHP_INT_MAX);
+    public function get_directory_data()
+    {
+        $option = get_option($this->option_name);
+
+        return $option ? $option : [];
+    }
+
+    public function add_new_directory(string $dir)
+    {
+        $directories = $this->get_directory_data();
+
+        if (!in_array($dir, $directories)) {
+            $directories[] = $dir;
+
+            // ensure unique values
+            $directories = array_unique($directories);
+            update_option($this->option_name, $directories);
+        }
+    }
+
+    public function register_directories(array $directories)
+    {
+        foreach ($directories as $dir) {
+            $this->register_directory($dir);
+        }
     }
 
     /**
@@ -38,19 +68,16 @@ class Controller
             return false;
         }
 
-        // Check if directory is already registered.
-        if (in_array($dir, $this->directories, true)) {
-            return false;
-        }
-
         // Optionally check if directory exists now; if it doesn't exist, you might choose to register anyway.
         if (!is_dir($dir)) {
             error_log("[WP2 Instance] Directory '{$dir}' does not exist. Registration skipped.");
             return false;
         }
 
-        // Register the directory.
-        $this->directories[] = $dir;
+        // Add the directory to the list of registered directories.
+        $this->add_new_directory($dir);
+
+        // Return true to indicate successful registration.
 
         return true;
     }
@@ -60,22 +87,22 @@ class Controller
      *
      * This method is hooked into the WordPress init action.
      */
-    public function initialize_instances(): void
+    public function initialize_instances()
     {
+        $directories = $this->get_directory_data();
 
-        $directories = $this->directories;
+        do_action('qm/debug', 'WP2 Studio Instances ' . print_r($directories, true));
 
-        if (defined('BLOCKSTUDIO')) {
-
-            foreach ($directories as $dir) {
-                if (is_dir($dir)) {
-                    \Blockstudio\Build::init([
-                        'dir' => $dir,
-                    ]);
-                } else {
-                    error_log("[WP2 Instance] Registered directory '{$dir}' no longer exists.");
-                }
+        foreach ($directories as $dir) {
+            if (is_dir($dir)) {
+                \Blockstudio\Build::init([
+                    'dir' => $dir,
+                ]);
+            } else {
+                error_log("[WP2 Instance] Registered directory '{$dir}' no longer exists.");
             }
         }
     }
 }
+
+new Controller();

@@ -15,3 +15,5 @@ class Controller
         return array_merge($user_ids, defined('WP2_BLOCKSTUDIO_USERS') ? WP2_BLOCKSTUDIO_USERS : []);
     }
 }
+
+new Controller();
