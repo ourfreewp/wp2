@@ -14,14 +14,21 @@ WP2 is a powerful WordPress framework, an extensive block library, and a suite o
 
 ## Components
 
-- [WP2 New](./wp-content/plugins/wp2-new/README.md) incluedes daemon (must-use plugin) and module (standard plugin) that aids in the template cloning process.
-- [WP2 Core](./wp-content/plugins/wp2/README.md) is the foundation of WP2, providing essential functionality and utilities.
-- [WP2 Theme](./wp-content/themes/wp2/README.md) is block-based, primarily configuration-based theme tailored for full-site editing.
+- [Core](./wp-content/plugins/wp2/README.md) is the foundation of WP2, providing essential functionality and utilities.
+- [Theme](./wp-content/themes/wp2/README.md) is block-based, primarily configuration-based theme tailored for full-site editing.
 
 ## Modules
 
+### Daemons
+
+- [WP2 Studio](./wp-content/mu-plugins/wp2-studio/README.m) provides the docs and resources for WP2, including information specific about your site.
+- [WP2 New](./wp-content/mu-plugins/wp2-new/README.md) daemon (must-use plugin) that aids in the template cloning process.
+- 
+### Plugins
+
 - [WP2 Work](./wp-content/plugins/wp2-work/README.m) establishes set of tools and utilities for connecting your site to your workspaces and collaboration tools.
 - [WP2 Wiki](./wp-content/plugins/wp2-wiki/README.m) provides the docs and resources for WP2, including information specific about your site.
+- [WP2 New](./wp-content/mu-plugins/wp2-new/README.md)that aids in the template cloning process.
 
 ## Blocks
 
