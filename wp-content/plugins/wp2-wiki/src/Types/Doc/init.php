@@ -1,10 +1,9 @@
 <?php
-// Path: wp-content/plugins/wp2-wiki/src/Wiki/Types/Doc/init.php
+// Path: wp-content/plugins/wp2-wiki/src/Types/Doc/init.php
 
-namespace WP2\Wiki\Types\Doc;
+namespace WP2_Wiki\Types\Doc;
 
-
-class SingleController
+class Controller
 {
 
     /**
@@ -45,7 +44,7 @@ class SingleController
      */
     public function __construct()
     {
-        add_action('init', [$this, 'register_type'], 30);
+        add_action('init', [$this, 'register_type']);
     }
 
     public function register_type()
@@ -113,5 +112,3 @@ class SingleController
         return $args;
     }
 }
-
-new SingleController();

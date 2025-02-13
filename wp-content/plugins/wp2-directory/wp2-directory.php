@@ -1,15 +1,15 @@
 <?php
 
 /**
- * Plugin Name: WP2 Wiki
- * Description: 
+ * Plugin Name: WP2 Directory
+ * Description: The directory system for WP2. Extends Blockstudio with a modular bootstrapping experience.
  * Version: 1.0
  * Author: WP2S
  *
- * @package WP2_Wiki
+ * @package WP2_Directory
  */
 
-namespace WP2_Wiki;
+namespace WP2_Directory;
 
 // Exit if accessed directly.
 if (! defined('ABSPATH')) {
@@ -21,10 +21,10 @@ use WP2_Daemon\WP2_Studio\Handlers\Instance\Controller as StudioController;
 /**
  * Class Plugin
  *
- * Main class for the WP2 Wiki plugin. This class defines required constants,
+ * Main class for the WP2 Directory plugin. This class defines required constants,
  * registers directories for block types, and initializes the integration with Blockstudio.
  *
- * @package WP2_Wiki
+ * @package WP2_Directory
  */
 class Module
 {
@@ -42,11 +42,7 @@ class Module
      * @var array
      */
     private $directories = [
-        WP2_WIKI_DIR . '/src/Assets',
-        WP2_WIKI_DIR . '/src/Blocks/Namespaces/wp2-wiki',
-        WP2_WIKI_DIR . '/src/Helpers',
-        WP2_WIKI_DIR . '/src/Templates',
-        WP2_WIKI_DIR . '/src/Types',
+        WP2_DIRECTORY_DIR . '/src/Types',
     ];
 
     /**
@@ -62,17 +58,20 @@ class Module
     public function __construct()
     {
         // Set constant values using plugin_dir_path and get_template_directory functions.
-        $this->constants['WP2_WIKI_DIR'] = plugin_dir_path(__FILE__);
-        $this->constants['WP2_WIKI_DIR'] = plugin_dir_url(__FILE__);
-        $this->constants['WP2_THEME_DIR'] = get_template_directory();
-        $this->constants['WP2_THEME_URL'] = get_template_directory_uri();
+        $this->constants['WP2_DIRECTORY_DIR'] = plugin_dir_path(__FILE__);
+        $this->constants['WP2_DIRECTORY_URL'] = plugin_dir_url(__FILE__);
+        $this->constants['WP2_THEME_DIR']     = get_template_directory();
+        $this->constants['WP2_THEME_URL']     = get_template_directory_uri();
 
         // Define the constants.
         $this->define_constants();
 
-        // Initialize the plugin functionality on the 'init' hook.
+        // Initialize the plugin functionality.
         add_action('init', [$this, 'init_module'], 100);
     }
+
+
+    //
 
     /**
      * Defines required constants.
@@ -105,4 +104,5 @@ class Module
         $this->studio_controller->register_directories($this->directories);
     }
 }
+
 new Module();

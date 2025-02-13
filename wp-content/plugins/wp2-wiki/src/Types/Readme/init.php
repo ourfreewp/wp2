@@ -3,7 +3,7 @@
 
 namespace WP2_Wiki\Types\Readme;
 
-class SingleController
+class Controller
 {
 
     /**
@@ -35,7 +35,7 @@ class SingleController
      */
     public function __construct()
     {
-        add_action('init', [$this, 'register_type'], 30);
+        add_action('init', [$this, 'register_type'], 100);
     }
 
     public function register_type()
@@ -135,4 +135,4 @@ class SingleController
     }
 }
 
-new SingleController();
+new Controller();

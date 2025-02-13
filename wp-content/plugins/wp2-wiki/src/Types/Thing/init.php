@@ -3,7 +3,7 @@
 
 namespace WP2_Wiki\Types\Thing;
 
-class SingleController
+class Controller
 {
     /**
      * Textdomain.
@@ -144,4 +144,4 @@ class SingleController
     }
 }
 
-new SingleController();
+new Controller();
