@@ -465,7 +465,6 @@ class Controller
         // set define_paths to readme_paths
         $this->readme_paths = $this->define_paths();
         $paths = $this->readme_paths;
-        do_action('qm/debug', $paths);
 
         if ($this->check_context($this->options_hook)) {
             $this->handle_options_sync();
