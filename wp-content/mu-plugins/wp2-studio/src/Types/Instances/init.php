@@ -1,5 +1,5 @@
 <?php
-
+//
 namespace WP2_Daemon\WP2_Studio\Types\Instances;
 
 class Controller

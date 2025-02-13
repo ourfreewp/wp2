@@ -4,31 +4,23 @@
 namespace WP2_Daemon\WP2_Studio;
 
 use WP2_Daemon\WP2_Studio\Settings\User\Controller as UserSettingsController;
+use WP2_Daemon\WP2_Studio\Handlers\Instance\Controller as StudioInitializer;
 
 class Controller
 {
     public function __construct()
     {
         $this->init_settings();
-    }
-
-    public function init_extensions()
-    {
-        // Initialize extensions here.
+        $this->init_handlers();
     }
 
     public function init_handlers()
     {
-        // Initialize handlers here.
+        new StudioInitializer();
     }
 
     public function init_settings()
     {
         new UserSettingsController();
-    }
-
-    public function init_types()
-    {
-        // Initialize types here.
     }
 }
