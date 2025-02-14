@@ -21,14 +21,16 @@ WP2 is a powerful WordPress framework, an extensive block library, and a suite o
 
 ### Daemons
 
-- [WP2 Studio](./wp-content/mu-plugins/wp2-studio/README.m) provides the docs and resources for WP2, including information specific about your site.
-- [WP2 New](./wp-content/mu-plugins/wp2-new/README.md) daemon (must-use plugin) that aids in the template cloning process.
-- 
+- [WP2 New](./wp-content/mu-plugins/wp2-new/README.md) - aids in the site cloning process.
+- [WP2 Studio](./wp-content/mu-plugins/wp2-studio/README.m) - an abstraction layer for Blockstudio.
+
 ### Plugins
 
-- [WP2 Work](./wp-content/plugins/wp2-work/README.m) establishes set of tools and utilities for connecting your site to your workspaces and collaboration tools.
-- [WP2 Wiki](./wp-content/plugins/wp2-wiki/README.m) provides the docs and resources for WP2, including information specific about your site.
-- [WP2 New](./wp-content/mu-plugins/wp2-new/README.md)that aids in the template cloning process.
+- [WP2 Core](./wp-content/plugins/wp2/README.md) - the foundation of WP2, providing essential functionality and utilities.
+- [WP2 Work](./wp-content/plugins/wp2-work/README.md) - a collection of tools working and collaborating beyond the WordPress ecosystem.
+- [WP2 Wiki](./wp-content/plugins/wp2-wiki/README.md) - a collection of tools for creating and managing documentation.
+- [WP2 New](./wp-content/mu-plugins/wp2-new/README.md) - aids in the site cloning process along with WP2 New Daemon.
+- [WP2 Directory](./wp-content/plugins/wp2-directory/README.md) - directory service with listings for WP2 resources, like modules, integrations, and more.
 
 ## Blocks
 
@@ -79,11 +81,6 @@ A rich collection of blocks is provided to help you build content quickly and ef
 ### Utility Blocks
 
 [Stretched Link](./wp-content/plugins/wp2/src/Blocks/Namespaces/wp2/StretchedLink/README.md)
-
-## Plugins
-
-- [Daemons](./wp-content/mu-plugins/README.md)
-- [Standard](./wp-content/plugins/README.md)
 
 ## Next Steps
 
