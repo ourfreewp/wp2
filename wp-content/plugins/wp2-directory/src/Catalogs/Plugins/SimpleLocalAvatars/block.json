@@ -1,0 +1,8 @@
+{
+    "$schema": "https://app.blockstudio.dev/schema",
+    "apiVersion": 2,
+    "name": "wp2-plugin/simple-local-avatars",
+    "title": "Simple Local Avatars",
+    "ancestor": ["wp2-directory/catalog"],
+    "blockstudio": true
+}
