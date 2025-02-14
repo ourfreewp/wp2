@@ -89,7 +89,8 @@ class Controller
     protected function prepare_catalog_listing_sync_payload($sync_args)
     {
         $meta_prefix = 'wp2_catalog_' . $sync_args['kind'];
-
+        $kind         = $sync_args['kind'];
+        $dir          = $sync_args['dir'];
         $block_data   = $sync_args['block'];
         $post_title   = $block_data['title'];
         $post_excerpt = $block_data['description'] ?? '';
@@ -112,7 +113,8 @@ class Controller
         );
 
         $meta_args = [
-            'path'              => $sync_args['dir'],
+            'kind'              => $kind,
+            'path'              => $dir,
             'block_name'        => $block_name,
             'block_data'        => $block_data,
             'block_attributes'  => $attributes,
@@ -126,6 +128,7 @@ class Controller
             'post_content' => $post_content,
             'post_excerpt' => $post_excerpt,
             'post_name'    => $post_name,
+            'kind'         => $kind,
             'meta'         => $meta,
         ];
 
@@ -146,6 +149,19 @@ class Controller
     }
 
     /**
+     * Syncs a single listing for the 'integrations' kind.
+     *
+     * @param array $sync_payload The payload for the upsert.
+     * @return void
+     */
+    protected function handle_integrations_sync($sync_payload)
+    {
+        $process_payload = $sync_payload;
+        // if needed add custom logic for plugins
+        $this->upsert_catalog_listing($process_payload);
+    }
+
+    /**
      * Upserts a catalog listing post.
      *
      * @param array $payload The payload for the upsert.
@@ -156,6 +172,7 @@ class Controller
         $post_id = null;
         $post_type = 'wp2_catalog_listing';
         $post_name = $process_payload['post_name'];
+        $kind      = $process_payload['kind'];
 
         $post_data = [
             'post_name'   => $post_name,
@@ -182,7 +199,7 @@ class Controller
             error_log("Error upserting catalog listing: " . $post_id->get_error_message());
             return;
         }
-
+        $this->update_kind_taxonomy($post_id, $kind);
         $this->update_post_meta($post_id, $post_meta);
     }
 
@@ -231,6 +248,7 @@ class Controller
         return $data;
     }
 
+
     /**
      * Ensures a string ends with a trailing slash.
      *
@@ -267,6 +285,57 @@ class Controller
     {
         foreach ($meta as $key => $value) {
             update_post_meta($post_id, $key, $value);
+        }
+    }
+
+
+    /**
+     * Set Kind Taxonomy
+     * 
+     * @param string $kind The kind of directory (e.g., 'plugins').
+     * 
+     * @return void
+     */
+    protected function update_kind_taxonomy($post_id, $kind)
+    {
+        $taxonomy = 'wp2_catalog_kind';
+
+        $args = [
+            'name'        => 'Undefined',
+            'slug'        => $kind,
+            'description' => '',
+        ];
+
+        switch ($kind) {
+            case 'plugins':
+                $args['name'] = 'Plugins';
+                $args['description'] = 'Solutions from within the WordPress ecosystem.';
+                break;
+            case 'integrations':
+                $args['name'] = 'Integrations';
+                $args['description'] = 'Solutions from beyond the WordPress ecosystem.';
+                break;
+            default:
+                break;
+        }
+
+        $term = term_exists($kind, $taxonomy);
+
+        if (!$term) {
+            $term = wp_insert_term(
+                $args['name'],
+                $taxonomy,
+                [
+                    'slug'        => $args['slug'],
+                    'description' => $args['description'],
+                ]
+            );
+        } else {
+            $term = get_term_by('slug', $kind, $taxonomy);
+        }
+
+        if (!is_wp_error($term)) {
+            wp_set_post_terms($post_id, [$term['term_id']], $taxonomy);
         }
     }
 }
