@@ -42,7 +42,11 @@ class Module
      * @var array
      */
     private $directories = [
+        WP2_DIRECTORY_DIR . '/src/Blocks/Namespaces/wp2-directory',
+        WP2_DIRECTORY_DIR . '/src/Catalogs/Plugins',
+        WP2_DIRECTORY_DIR . '/src/Helpers',
         WP2_DIRECTORY_DIR . '/src/Types',
+        WP2_DIRECTORY_DIR . '/src/Syncs',
     ];
 
     /**

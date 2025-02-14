@@ -1,0 +1,8 @@
+{
+    "$schema": "https://app.blockstudio.dev/schema",
+    "apiVersion": 2,
+    "name": "wp2-plugin/create-block-theme",
+    "title": "Create Block Theme",
+    "ancestor": ["wp2-directory/catalog"],
+    "blockstudio": true
+}
