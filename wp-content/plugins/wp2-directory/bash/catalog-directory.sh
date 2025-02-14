@@ -50,6 +50,18 @@ case "$kind" in
   pages)
     kind="page"
     ;;
+  features)
+    kind="feature"
+    ;;
+  assets)
+    kind="asset"
+    ;;
+  forms)
+    kind="form"
+    ;;
+  flows)
+    kind="flow"
+    ;;
   *)
     # If no match is found, keep the original or handle it as needed
     ;;
