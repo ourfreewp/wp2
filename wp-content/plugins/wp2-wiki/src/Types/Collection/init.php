@@ -37,12 +37,13 @@ class Controller
         'wp2_wiki_thing',
         'wp2_wiki_readme',
     ];
+
     /**
      * Constructor
      */
     public function __construct()
     {
-        add_action('init', [$this, 'register_type'], 12);
+        add_action('init', [$this, 'register_type'], 110);
     }
 
     public function register_type()
@@ -88,10 +89,6 @@ class Controller
             'labels'            => $labels,
             'hierarchical'      => true,
             'public'            => true,
-            'show_ui'           => true,
-            'show_admin_column' => true,
-            'show_in_nav_menus' => true,
-            'show_tagcloud'     => true,
             'sort'              => true,
         ];
 
