@@ -44,6 +44,12 @@ case "$kind" in
   themes)
     kind="theme"
     ;;
+  modules)
+    kind="module"
+    ;;
+  pages)
+    kind="page"
+    ;;
   *)
     # If no match is found, keep the original or handle it as needed
     ;;

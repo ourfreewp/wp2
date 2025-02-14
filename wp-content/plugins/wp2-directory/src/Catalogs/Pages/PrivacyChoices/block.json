@@ -1,0 +1,8 @@
+{
+"$schema": "https://app.blockstudio.dev/schema",
+"apiVersion": 2,
+"name": "wp2-page/privacy-choices",
+"title": "Privacy Choices",
+"ancestor": ["wp2-directory/catalog"],
+"blockstudio": true
+}

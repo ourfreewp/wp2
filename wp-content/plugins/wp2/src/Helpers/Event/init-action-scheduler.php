@@ -82,7 +82,8 @@ class Controller
         self::show_admin_notice(
             $admin_notice['type']          ?? 'info',
             $admin_notice['message']       ?? '',
-            $admin_notice['is_dismissible'] ?? true
+            $admin_notice['is_dismissible'] ?? true,
+            $admin_notice['sync_param']    ?? ''
         );
     }
 
@@ -106,7 +107,8 @@ class Controller
     private static function show_admin_notice(
         string $type = 'info',
         string $message = '',
-        bool $is_dismissible = true
+        bool $is_dismissible = true,
+        string $sync_param = ''
     ) {
 
         $args = [
@@ -114,6 +116,10 @@ class Controller
             'message' => $message,
             'is_dismissible' => $is_dismissible,
         ];
+
+        if ($sync_param) {
+            remove_query_arg($sync_param);
+        }
 
         add_action('admin_notices', function () use ($args) {
             echo self::get_admin_notice_html($args);
