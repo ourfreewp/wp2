@@ -7,6 +7,8 @@
 
 WP2 is a powerful WordPress framework, an extensive block library, and a suite of custom modules. Designed for both developers and content creators, WP2 makes it easier than ever to build engaging, high-performance websites.
 
+[Wiki](https://coda.io/d/_dhf1XCbLnFn/README_su1cZv1O)
+
 ### Requirements
 
 - [InstaWP](https://app.instawp.io/register?ref=39TUWaLAzX) — Or any WordPress site supporting PHP X.0+ and WP 6.X
