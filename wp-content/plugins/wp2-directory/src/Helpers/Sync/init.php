@@ -161,7 +161,6 @@ class Controller
         $this->upsert_catalog_listing($process_payload);
     }
 
-
     /**
      * Syncs a single listing for the 'modules' kind.
      *
@@ -175,6 +174,46 @@ class Controller
         $this->upsert_catalog_listing($process_payload);
     }
 
+
+    /**
+     * Syncs a single listing for the 'flows' kind.
+     *
+     * @param array $sync_payload The payload for the upsert.
+     * @return void
+     */
+    protected function handle_flows_sync($sync_payload)
+    {
+        $process_payload = $sync_payload;
+        // if needed add custom logic for plugins
+        $this->upsert_catalog_listing($process_payload);
+    }
+
+    /**
+     * Syncs a single listing for the 'forms' kind.
+     *
+     * @param array $sync_payload The payload for the upsert.
+     * @return void
+     */
+    protected function handle_forms_sync($sync_payload)
+    {
+        $process_payload = $sync_payload;
+        // if needed add custom logic for plugins
+        $this->upsert_catalog_listing($process_payload);
+    }
+
+
+    /**
+     * Syncs a single listing for the 'assets' kind.
+     *
+     * @param array $sync_payload The payload for the upsert.
+     * @return void
+     */
+    protected function handle_assets_sync($sync_payload)
+    {
+        $process_payload = $sync_payload;
+        // if needed add custom logic for plugins
+        $this->upsert_catalog_listing($process_payload);
+    }
 
 
     /**
@@ -352,6 +391,18 @@ class Controller
             case 'pages':
                 $args['name'] = 'Pages';
                 $args['description'] = 'The collection of pages you may need to build your site.';
+                break;
+            case 'flows':
+                $args['name'] = 'Flows';
+                $args['description'] = 'The collection of flows you may need to build your site.';
+                break;
+            case 'forms':
+                $args['name'] = 'Forms';
+                $args['description'] = 'The collection of forms you may need to build your site.';
+                break;
+            case 'assets':
+                $args['name'] = 'Assets';
+                $args['description'] = 'The collection of assets you may need to build your site.';
                 break;
             default:
                 break;
