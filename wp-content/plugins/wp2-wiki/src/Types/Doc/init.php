@@ -40,11 +40,22 @@ class Controller
     ];
 
     /**
+     * Taxonomies
+     * 
+     * @var array
+     */
+    private $taxonomies = [
+        'wp2_wiki_collection',
+        'wp2_wiki_section',
+        'wp2_wiki_kind',
+    ];
+
+    /**
      * Constructor
      */
     public function __construct()
     {
-        add_action('init', [$this, 'register_type']);
+        add_action('init', [$this, 'register_type'], 110);
     }
 
     public function register_type()
@@ -74,7 +85,7 @@ class Controller
             'new_item'           => __('New ' . $singular, $text_domain),
             'edit_item'          => __('Edit ' . $singular, $text_domain),
             'view_item'          => __('View ' . $singular, $text_domain),
-            'all_items'          => __('All ' . $plural, $text_domain),
+            'all_items'          => __($plural, $text_domain),
             'search_items'       => __('Search ' . $plural, $text_domain),
             'parent_item_colon'  => __('Parent ' . $plural . ':', $text_domain),
             'not_found'          => __('No ' . $plural . ' found.', $text_domain),
@@ -92,6 +103,8 @@ class Controller
         $slug = $this->single_slug;
         $archive_slug = $this->archive_slug;
 
+        $taxonomies = $this->taxonomies;
+
         $args = [
             'labels'             => $labels,
             'public'             => true,
@@ -107,8 +120,11 @@ class Controller
             'hierarchical'       => true,
             'supports'           => ['title', 'editor', 'thumbnail', 'excerpt', 'comments', 'page-attributes', 'custom-fields', 'revisions'],
             'show_in_rest'       => true,
+            'taxonomies'        => $taxonomies,
         ];
 
         return $args;
     }
 }
+
+new Controller();

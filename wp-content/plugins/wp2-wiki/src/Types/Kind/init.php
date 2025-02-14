@@ -50,7 +50,7 @@ class Controller
      */
     public function __construct()
     {
-        add_action('init', [$this, 'register_type'], 20);
+        add_action('init', [$this, 'register_type'], 110);
     }
 
     public function register_type()
