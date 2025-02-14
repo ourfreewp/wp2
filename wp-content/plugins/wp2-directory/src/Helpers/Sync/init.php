@@ -161,6 +161,36 @@ class Controller
         $this->upsert_catalog_listing($process_payload);
     }
 
+
+    /**
+     * Syncs a single listing for the 'modules' kind.
+     *
+     * @param array $sync_payload The payload for the upsert.
+     * @return void
+     */
+    protected function handle_modules_sync($sync_payload)
+    {
+        $process_payload = $sync_payload;
+        // if needed add custom logic for plugins
+        $this->upsert_catalog_listing($process_payload);
+    }
+
+
+
+    /**
+     * Syncs a single listing for the 'pages' kind.
+     *
+     * @param array $sync_payload The payload for the upsert.
+     * @return void
+     */
+    protected function handle_pages_sync($sync_payload)
+    {
+        $process_payload = $sync_payload;
+        // if needed add custom logic for plugins
+        $this->upsert_catalog_listing($process_payload);
+    }
+
+
     /**
      * Upserts a catalog listing post.
      *
@@ -315,6 +345,14 @@ class Controller
                 $args['name'] = 'Integrations';
                 $args['description'] = 'Solutions from beyond the WordPress ecosystem.';
                 break;
+            case 'modules':
+                $args['name'] = 'Modules';
+                $args['description'] = 'Solutions from within the WordPress ecosystem.';
+                break;
+            case 'pages':
+                $args['name'] = 'Pages';
+                $args['description'] = 'The collection of pages you may need to build your site.';
+                break;
             default:
                 break;
         }
@@ -330,8 +368,6 @@ class Controller
                     'description' => $args['description'],
                 ]
             );
-        } else {
-            $term = get_term_by('slug', $kind, $taxonomy);
         }
 
         if (!is_wp_error($term)) {

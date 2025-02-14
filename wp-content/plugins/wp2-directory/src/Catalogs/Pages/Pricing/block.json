@@ -1,0 +1,8 @@
+{
+"$schema": "https://app.blockstudio.dev/schema",
+"apiVersion": 2,
+"name": "wp2-page/pricing",
+"title": "Pricing",
+"ancestor": ["wp2-directory/catalog"],
+"blockstudio": true
+}

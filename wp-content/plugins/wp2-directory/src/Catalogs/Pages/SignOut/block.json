@@ -1,0 +1,8 @@
+{
+"$schema": "https://app.blockstudio.dev/schema",
+"apiVersion": 2,
+"name": "wp2-page/sign-out",
+"title": "Sign Out",
+"ancestor": ["wp2-directory/catalog"],
+"blockstudio": true
+}
